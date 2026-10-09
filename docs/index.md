@@ -95,6 +95,16 @@ The Complete EN+ES edition includes every base prompt rebuilt for the real LatAm
 
 ---
 
+## 📚 Guides
+
+Practical, engineer-to-engineer write-ups from the stack — no marketing-speak:
+
+- **[AI Prompts for Freelancers: The Systems Approach That Gets You Hired](/prompt-stack/articles/01-ai-prompts-for-freelancers.md)** — why "write me a cold email" fails, the anatomy of a prompt system, and the three workflow points where it pays for itself.
+- **[Prompt Engineering for Client Work: A Working System, Not a One-Liner](/prompt-stack/articles/02-prompt-engineering-for-client-work.md)** — output specs that make client deliverables predictable: the SEO engine, conversion copy, and social repurposing, end to end.
+- **[Anti-Hallucination Prompts: How to Stop ChatGPT Making Things Up](/prompt-stack/articles/03-anti-hallucination-prompts.md)** — the `[VERIFY]` flag pattern, accuracy-bearing system instructions, and a 2-minute pre-ship checklist.
+
+---
+
 ## 🏆 Why this stack is different
 
 Most prompt packs are a dump of one-line snippets. This is a documented operating system for your freelance business:
