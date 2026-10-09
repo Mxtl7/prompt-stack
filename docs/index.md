@@ -6,7 +6,7 @@
 >
 > Works in **ChatGPT, Claude, Gemini, or any AI**. Plain `.md` files — no apps, no subscriptions, no install.
 
-**$14.99** Base Pack · **$39** Pro Bundle · **$49** Complete EN+ES Edition
+**$14.99** Base Pack · **$39** Pro Bundle · **$49** Complete EN+ES Edition · **$59** Agency Edition
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Mxtl7/prompt-stack/blob/main/LICENSE)
 [![Format](https://img.shields.io/badge/Format-.md%20files-blue)](https://github.com/Mxtl7/prompt-stack)
@@ -24,9 +24,31 @@
 | **5 core systems** (01–05) + the **Spanish edition** | **All 20 systems** (01–20) — the complete workflow | Everything in the Pro Bundle **plus** the LatAm Spanish edition — **25 systems total** |
 | Find clients, publish content, defend your rate | Find it, win it, deliver it, market it — end to end | Sell in two languages without rewriting a thing |
 | Best for: getting the first wins this week | Best for: freelancers running a real operation | Best for: freelancers serving EN **and** ES markets |
-| **[→ Get the Base Pack](#)** | **[→ Get the Pro Bundle](#)** | **[→ Get Complete EN+ES](#)** |
+| [→ Buy the Base Pack](#) | [→ Buy the Pro Bundle](#) | [→ Buy Complete EN+ES](#) | [→ Buy the Agency Edition — $59](#) |
 
 💡 *Also available: any single prompt for $4.99. All prices one-time — instant delivery, lifetime updates to v1.x.*
+
+### 🏛 Agency Edition — 15 agency-level systems (21–35) — $59
+
+For when the solo-freelancer toolset ends and the business begins: retainers, subcontractors, white-label delivery, QC audits, QBR reports, RFPs, and pricing architecture.
+
+| # | Prompt | Outcome |
+|---|--------|---------|
+| 21 | **Client Portal & Account Setup** | New-client account structure: contacts, escalation paths, access matrix |
+| 22 | **Retainer Agreements** | Retainer scope, deliverables cadence, and the renewal conversation |
+| 23 | **Subcontractor Briefs** | Clean handoff briefs that keep quality when someone else executes |
+| 24 | **White-Label Delivery** | Client-facing delivery under their brand — SOP + QC gates |
+| 25 | **Team Handbook & SOPs** | Onboard a new team member to your systems in one document |
+| 26 | **Hiring & Vetting Tests** | Role-specific vetting prompts that surface real skill, not buzzwords |
+| 27 | **Capacity Planning** | Workload forecast from pipeline + delivery times — say no before you burn out |
+| 28 | **QC Audit Checklists** | Deliverable audit before it reaches the client — catch it first |
+| 29 | **Escalation Scripts** | When it goes wrong: the client call script that keeps the account |
+| 30 | **Client QBR Reports** | Quarterly Business Review: results, metrics, next-quarter plan |
+| 31 | **Outbound Drip Systems** | Multi-touch outbound to whole account teams, not just one buyer |
+| 32 | **Partnership Pitches** | Partner-with-us proposals for adjacent service providers |
+| 33 | **RFP Responses** | Structured RFP answers that win on clarity, not price |
+| 34 | **Onboarding Automation** | Client-onboarding flow that runs without you in the loop |
+| 35 | **Pricing Tier Architecture** | Design service tiers that make the top plan the obvious choice |
 
 ---
 
