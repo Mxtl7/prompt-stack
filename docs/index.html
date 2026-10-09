@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Modern Freelancer's AI Prompt Stack — 20 production-ready prompt systems</title>
+<meta name="description" content="20 production-ready AI prompt systems covering the full freelance money path — with system prompts, [VERIFY] anti-hallucination flags, and a LatAm Spanish edition. $14.99 pack / $39 bundle / $49 EN+ES.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Modern Freelancer's AI Prompt Stack">
+<meta property="og:title" content="The Modern Freelancer's AI Prompt Stack">
+<meta property="og:description" content="20 production-ready AI prompt systems — with system prompts, [VERIFY] anti-hallucination flags, and a LatAm Spanish edition. $14.99 pack / $39 bundle / $49 EN+ES.">
+<meta property="og:url" content="https://mxtl7.github.io/prompt-stack/">
+<meta property="og:image" content="https://mxtl7.github.io/prompt-stack/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Modern Freelancer's AI Prompt Stack">
+<meta name="twitter:description" content="20 production-ready AI prompt systems — system prompts, [VERIFY] flags, LatAm Spanish edition. $14.99 pack / $39 bundle / $49 EN+ES.">
+<meta name="twitter:image" content="https://mxtl7.github.io/prompt-stack/og.png">
+
+<style>
+:root{
+  --bg:#0a0d14; --bg2:#0f1420; --card:#131a29; --card2:#182136;
+  --line:#232d42; --text:#eef2f9; --dim:#98a4b8; --mute:#6b7690;
+  --teal:#5eead4; --violet:#a78bfa; --amber:#fbbf24;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:rgba(94,234,212,.1);color:var(--teal);padding:1px 7px;border-radius:6px;font-size:.86em;border:1px solid rgba(94,234,212,.18)}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.02rem;color:var(--text);display:flex;gap:9px;align-items:center}
+.brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
+.nav .links{display:flex;gap:22px;font-size:.92rem}
+.nav .links a{color:var(--dim)}
+@media(max-width:640px){.nav .links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto;height:520px;background:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(94,234,212,.09),transparent 60%),radial-gradient(ellipse 50% 40% at 75% 10%,rgba(167,139,250,.08),transparent 60%);pointer-events:none}
+.hero .kicker{display:inline-block;font-family:ui-monospace,Consolas,monospace;font-size:.8rem;letter-spacing:.14em;color:var(--teal);border:1px solid rgba(94,234,212,.35);padding:7px 16px;border-radius:999px;margin-bottom:22px;background:rgba(94,234,212,.06)}
+.hero h1{font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tagline{color:var(--dim);max-width:640px;margin:20px auto 0;font-size:1.08rem}
+.hero .flags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.hero .flags span{font-size:.8rem;color:var(--dim);border:1px solid var(--line);background:var(--bg2);padding:6px 13px;border-radius:999px}
+.hero .flags b{color:var(--text);font-weight:600}
+.prices-hero{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;font-family:ui-monospace,Consolas,monospace;font-size:.95rem}
+.prices-hero span{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.prices-hero b{color:var(--teal)}
+
+/* ---------- sections ---------- */
+section{padding:58px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.sub{color:var(--dim);max-width:640px;margin-bottom:34px}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* ---------- pricing cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;position:relative}
+.card.pop{border-color:rgba(167,139,250,.55);background:linear-gradient(180deg,rgba(167,139,250,.08),var(--card) 45%)}
+.card .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:700;letter-spacing:.1em;color:#0a0d14;background:linear-gradient(90deg,var(--teal),var(--violet));padding:4px 14px;border-radius:999px}
+.card h3{font-size:1.02rem;color:var(--dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.85rem}
+.card .price{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;margin:8px 0 2px}
+.card .price small{font-size:.95rem;color:var(--mute);font-weight:500}
+.card .desc{color:var(--dim);font-size:.93rem;margin:10px 0 16px;flex:1}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.card ul li{font-size:.9rem;color:var(--dim);padding-left:24px;position:relative}
+.card ul li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+.card ul li b{color:var(--text);font-weight:600}
+.card .cta{display:block;text-align:center;background:var(--card2);border:1px solid var(--line);color:var(--text);font-weight:700;padding:13px;border-radius:12px;font-size:.95rem}
+.card.pop .cta{background:linear-gradient(90deg,var(--teal),var(--violet));color:#0a0d14;border:none}
+.card .cta:hover{text-decoration:none;filter:brightness(1.12)}
+.card .for{font-size:.8rem;color:var(--mute);text-align:center;margin-top:10px}
+.singles{color:var(--mute);font-size:.85rem;text-align:center;margin-top:22px}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin-bottom:28px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line);color:var(--dim);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num{font-family:ui-monospace,Consolas,monospace;color:var(--teal);white-space:nowrap}
+td strong{color:var(--text)}
+h3.grp{font-size:1.05rem;margin-bottom:14px;color:var(--text)}
+h3.grp span{color:var(--mute);font-weight:500;font-size:.88rem}
+
+/* ---------- differentiators ---------- */
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.feat .ico{font-size:1.3rem}
+.feat h3{font-size:1rem;margin:8px 0 6px}
+.feat p{font-size:.9rem;color:var(--dim)}
+
+/* ---------- how it works ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;counter-reset:st}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.step .n{font-family:ui-monospace,Consolas,monospace;color:var(--teal);font-size:.85rem;font-weight:700}
+.step h3{font-size:1rem;margin:8px 0 6px}
+.step p{font-size:.9rem;color:var(--dim)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:780px;margin:0 auto}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:700;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::after{content:"+";color:var(--teal);font-size:1.3rem;font-weight:400;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--dim);font-size:.93rem;margin-top:12px}
+.faq details[open]{border-color:rgba(94,234,212,.3)}
+
+/* ---------- final CTA ---------- */
+.final{background:linear-gradient(180deg,var(--bg),rgba(94,234,212,.045));border-top:1px solid var(--line);text-align:center;padding:72px 0}
+.final h2{margin-bottom:10px}
+.final p{color:var(--dim);max-width:560px;margin:0 auto 30px}
+.buy-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.buy-row a{padding:14px 26px;border-radius:12px;font-weight:700;font-size:.95rem;border:1px solid var(--line);background:var(--card2);color:var(--text)}
+.buy-row a.primary{background:linear-gradient(90deg,var(--teal),var(--violet));color:#0a0d14;border:none}
+.buy-row a:hover{text-decoration:none;filter:brightness(1.12)}
+.fine{color:var(--mute);font-size:.84rem;margin-top:22px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:.86rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>Prompt Stack</div>
+    <nav class="links">
+      <a href="#pricing">Pricing</a>
+      <a href="#whats-inside">What's inside</a>
+      <a href="#why-different">Why it's different</a>
+      <a href="#faq">FAQ</a>
+      <a href="#get-it">Get the stack</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">THE COMPLETE FREELANCE WORKFLOW · 20 PROMPT SYSTEMS</span>
+    <h1>Stop collecting prompts.<br>Start running <span class="grad">systems.</span></h1>
+    <p class="tagline">Production-ready AI prompt systems covering the entire freelance money path — finding clients, winning them, delivering the work, and marketing it. Each ships with a system prompt, a structured output spec, <code>[bracket]</code> customization slots, and built-in anti-hallucination <code>[VERIFY]</code> flags.</p>
+    <div class="flags">
+      <span>Works in <b>ChatGPT, Claude, Gemini — any AI</b></span>
+      <span>Plain <b>.md</b> files — no apps, no subscriptions</span>
+      <span><b>Instant delivery</b> · MIT license</span>
+    </div>
+    <div class="prices-hero">
+      <span>📦 Base Pack — <b>$14.99</b></span>
+      <span>🚀 Pro Bundle — <b>$39</b></span>
+      <span>🌎 Complete EN+ES — <b>$49</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="center">
+      <h2>💰 Pick your stack</h2>
+      <p class="sub">One-time payment. Instant delivery. Lifetime updates to v1.x.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Base Pack</h3>
+        <div class="price">$14.99</div>
+        <p class="desc">The 5 core systems (01–05) <b>plus the Spanish edition</b> — find clients, publish content, defend your rate.</p>
+        <ul>
+          <li><b>5 core systems</b>: acquisition, SEO content, negotiation, landing/email copy, social autopilot</li>
+          <li><b>Spanish edition included</b> (LatAm-adapted)</li>
+          <li>System prompt + output spec per system</li>
+          <li><code>[VERIFY]</code> anti-hallucination flags</li>
+        </ul>
+        <!-- TODO: checkout link -->
+        <a class="cta" href="#">Get the Base Pack →</a>
+        <p class="for">Best for: first wins this week</p>
+      </div>
+      <div class="card pop">
+        <span class="badge">MOST COMPLETE</span>
+        <h3>Pro Bundle</h3>
+        <div class="price">$39</div>
+        <p class="desc">All 20 systems — the complete workflow from prospecting to documentation.</p>
+        <ul>
+          <li><b>All 20 systems</b> (01–20): find work, win it, deliver it, market it</li>
+          <li>Proposals, pricing, onboarding, briefs, SOPs, follow-ups</li>
+          <li>System prompt + output spec per system</li>
+          <li><code>[VERIFY]</code> anti-hallucination flags</li>
+        </ul>
+        <!-- TODO: checkout link -->
+        <a class="cta" href="#">Get the Pro Bundle →</a>
+        <p class="for">Best for: freelancers running a real operation</p>
+      </div>
+      <div class="card">
+        <h3>Complete EN+ES</h3>
+        <div class="price">$49</div>
+        <p class="desc">Everything in the Pro Bundle <b>plus the LatAm Spanish edition</b> — 25 systems total.</p>
+        <ul>
+          <li><b>All 20 EN systems</b> + the full ES edition</li>
+          <li>WhatsApp Business, MercadoLibre, Instagram examples</li>
+          <li>Local-currency pricing & real LatAm objections</li>
+          <li>Sell in two languages without rewriting a thing</li>
+        </ul>
+        <!-- TODO: checkout link -->
+        <a class="cta" href="#">Get Complete EN+ES →</a>
+        <p class="for">Best for: freelancers serving EN and ES markets</p>
+      </div>
+    </div>
+    <p class="singles">Also available: any single prompt for <b>$4.99</b>.</p>
+  </div>
+</section>
+
+<!-- ================= WHAT'S INSIDE ================= -->
+<section id="whats-inside">
+  <div class="wrap">
+    <h2>📦 What's inside</h2>
+    <p class="sub">20 documented systems — every one with a system instruction, structured output spec, and customization parameters.</p>
+
+    <h3 class="grp">Base Pack — the 5 core systems <span>($14.99)</span></h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>#</th><th>Prompt</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td><strong>Client Acquisition & Outreach</strong></td><td>3 personalized cold messages — researched hook, one concrete outcome, soft CTA</td></tr>
+          <tr><td class="num">02</td><td><strong>SEO Content Engine</strong></td><td>1500-word rankable articles: outline, E-E-A-T structure, FAQ + meta tags</td></tr>
+          <tr><td class="num">03</td><td><strong>Negotiation & Closing</strong></td><td>3 price-defense responses, objection diagnosis, a close that asks for commitment</td></tr>
+          <tr><td class="num">04</td><td><strong>Landing Page & Email Copy</strong></td><td>Hero + benefit bullets + body + CTA + objection FAQ — zero marketing-speak</td></tr>
+          <tr><td class="num">05</td><td><strong>Social Media Autopilot</strong></td><td>1 LinkedIn post + 3 X threads + 5-slide carousel from ONE core idea</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="grp">Pro Bundle — 15 more systems <span>($39, includes 01–05)</span></h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>#</th><th>Prompt</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="num">06</td><td><strong>Email Marketing Sequences</strong></td><td>5-email welcome sequence: subject, preview, body, one CTA per email</td></tr>
+          <tr><td class="num">07</td><td><strong>Proposal Writing</strong></td><td>Sign-and-send proposals under 600 words — their words, your price, one next step</td></tr>
+          <tr><td class="num">08</td><td><strong>Pricing Strategy</strong></td><td>Floor-rate math, 3 pricing models, the exact sentence to state your price</td></tr>
+          <tr><td class="num">09</td><td><strong>Client Onboarding System</strong></td><td>Welcome email, kickoff agenda, asset checklist, scope-creep response</td></tr>
+          <tr><td class="num">10</td><td><strong>Project Brief Intake</strong></td><td>Clean brief from messy client messages — ambiguity caught before you invoice</td></tr>
+          <tr><td class="num">11</td><td><strong>Competitor Analysis</strong></td><td>Market map, positioning gap, and a 2-sentence positioning statement</td></tr>
+          <tr><td class="num">12</td><td><strong>Product Descriptions</strong></td><td>Amazon / Shopify / social variants — outcome-first, claims flagged</td></tr>
+          <tr><td class="num">13</td><td><strong>Video Scripts (YouTube/TikTok)</strong></td><td>Hook-first scripts with beats, pattern interrupts, titles + thumbnail text</td></tr>
+          <tr><td class="num">14</td><td><strong>Podcast & Show Notes</strong></td><td>Titles, description, chapters, pull-quotes, keywords — from any transcript</td></tr>
+          <tr><td class="num">15</td><td><strong>Newsletter Growth</strong></td><td>Positioning, lead magnets, referral line, 4-week realistic growth calendar</td></tr>
+          <tr><td class="num">16</td><td><strong>Cold Email Follow-Up</strong></td><td>4-touch value-added sequence — never "just bumping this"</td></tr>
+          <tr><td class="num">17</td><td><strong>Testimonial & Review Kit</strong></td><td>Request messages + guided questions + DIY draft the client approves</td></tr>
+          <tr><td class="num">18</td><td><strong>SOP & Notion Documentation</strong></td><td>Messy process → day-one-ready SOP with checklist and IF/THEN steps</td></tr>
+          <tr><td class="num">19</td><td><strong>Meeting Notes → Action Items</strong></td><td>TL;DR, decisions, owner+date action table, follow-up message</td></tr>
+          <tr><td class="num">20</td><td><strong>Job Post & Gig Filter</strong></td><td>APPLY/SKIP verdict with red flags, fit score, and your proposal angle</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="grp">🌎 The Spanish edition — adapted, not translated</h3>
+    <p class="sub">Included with the Complete EN+ES edition. Every base prompt rebuilt for the real LatAm/Spain market:</p>
+    <div class="feats">
+      <div class="feat"><div class="ico">💬</div><h3>WhatsApp Business first</h3><p>Sales messages that sound like a person, not a flyer — follow-ups included.</p></div>
+      <div class="feat"><div class="ico">💱</div><h3>Local pricing context</h3><p>Dollars plus local currency, with the classic objections: "está caro", "¿me hacés precio?"</p></div>
+      <div class="feat"><div class="ico">🛍️</div><h3>MercadoLibre, Instagram & WhatsApp statuses</h3><p>Where freelancers are actually discovered in LatAm — not LinkedIn only.</p></div>
+      <div class="feat"><div class="ico">🗣️</div><h3>Natural professional Spanish</h3><p>Cercano tuteo — no gringo-translation voice, no LinkedIn-guru cringe.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY DIFFERENT ================= -->
+<section id="why-different">
+  <div class="wrap">
+    <h2>🏆 Why this stack is different</h2>
+    <p class="sub">Most prompt packs are a dump of one-line snippets. This is a documented operating system for your freelance business.</p>
+    <div class="feats">
+      <div class="feat"><div class="ico">🛡️</div><h3>Anti-hallucination built in</h3><p>Every prompt forces the AI to mark unverified claims with <code>[VERIFY]</code> / <code>[CONFIRM]</code> instead of inventing facts, prices, or quotes. The difference between a tool and a liability.</p></div>
+      <div class="feat"><div class="ico">🧩</div><h3>Real system prompts</h3><p>Each prompt sets the AI's role, constraints, and a structured output spec — consistent, professional-grade output, not a lucky guess.</p></div>
+      <div class="feat"><div class="ico">🔧</div><h3>Customization slots</h3><p><code>[brackets]</code> for your service, niche, prospect, and rate. Adapt any system to your business in under a minute.</p></div>
+      <div class="feat"><div class="ico">🌎</div><h3>A real LatAm Spanish edition</h3><p>Market-adapted examples and channels — not a machine translation.</p></div>
+      <div class="feat"><div class="ico">💼</div><h3>The full money path</h3><p>Find work (01, 11, 20), win it (03, 07, 16), deliver it (09, 10, 18, 19), market it (02, 04–06, 12–15, 17).</p></div>
+      <div class="feat"><div class="ico">⚡</div><h3>Universal format</h3><p>Plain <code>.md</code> files that work in any AI tool. Copy, fill the brackets, paste. MIT license.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how-it-works">
+  <div class="wrap">
+    <h2>🛠 How it works</h2>
+    <p class="sub">Under a minute from file to finished output.</p>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Pick the system</h3><p>Choose by your goal — land a client, publish, price, onboard.</p></div>
+      <div class="step"><span class="n">02</span><h3>Fill the [brackets]</h3><p>Your service, your prospect, your rate. That's the whole setup.</p></div>
+      <div class="step"><span class="n">03</span><h3>Paste into your AI</h3><p>Adjust until it sounds like you. Save the best outputs as your reusable templates.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <h2>❓ FAQ</h2>
+      <p class="sub">Everything you'd ask before buying.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>How do I use the prompts?</summary>
+        <p>Open any <code>.md</code> file, copy the prompt, replace the <code>[brackets]</code> with your details, and paste it into ChatGPT, Claude, Gemini, or any AI tool. Adjust the output until it sounds like you.</p>
+      </details>
+      <details>
+        <summary>Do I need an app or a subscription?</summary>
+        <p>No. These are plain <code>.md</code> files that work in any AI tool you already use — nothing to install, nothing to keep paying for.</p>
+      </details>
+      <details>
+        <summary>What makes these different from free prompt lists?</summary>
+        <p>Free lists give you 1000 snippets you never use. Each of these is a <em>system</em>: a system instruction that sets the AI's role, a structured output spec, and customization parameters — plus <code>[VERIFY]</code> flags that stop the AI from inventing facts. You get 20 documented systems you'll actually run every week.</p>
+      </details>
+      <details>
+        <summary>Which pack should I buy?</summary>
+        <p>Start with the <strong>Base Pack ($14.99)</strong> if you mainly need clients, content, and pricing conversations. Get the <strong>Pro Bundle ($39)</strong> if you also deliver projects, run email or a newsletter, or document your operations. Get <strong>Complete EN+ES ($49)</strong> if you sell in both English and Spanish — it's the whole bundle plus the LatAm edition.</p>
+      </details>
+      <details>
+        <summary>Is the Spanish version just a translation?</summary>
+        <p>No — it's a market adaptation. Examples use WhatsApp Business, MercadoLibre, Instagram and WhatsApp statuses; pricing handles local currencies and the objections you actually hear in the region, in natural professional Spanish.</p>
+      </details>
+      <details>
+        <summary>What's the license, and how do I receive the files?</summary>
+        <p>MIT license — use, modify, and reuse the prompts in your own work. Files are delivered instantly as <code>.md</code> downloads after checkout.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final" id="get-it">
+  <div class="wrap">
+    <h2>🚀 Get the stack</h2>
+    <p>The complete freelance workflow, documented — starting at $14.99.</p>
+    <!-- TODO: checkout link -->
+    <div class="buy-row">
+      <a href="#">Buy the Base Pack — $14.99</a>
+      <a class="primary" href="#">Buy the Pro Bundle — $39</a>
+      <a href="#">Buy Complete EN+ES — $49</a>
+    </div>
+    <p class="fine">Instant delivery · One-time payment · MIT license</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><strong>The Modern Freelancer's AI Prompt Stack</strong> — built by freelancers, for freelancers.</span>
+    <span><a href="https://github.com/Mxtl7/prompt-stack">GitHub Repo</a> · <a href="https://github.com/Mxtl7/prompt-stack/blob/main/LICENSE">MIT License</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
