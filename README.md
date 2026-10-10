@@ -1,15 +1,22 @@
 # "The Modern Freelancer's AI Prompt Stack" — Prompt Pack v1.0
 
-**Producto digital listo para publicar.** Propuesta: categoría "Productividad / Negocios".
-Precio sugerido: **$14.99** (pack) — margen de ventas rápido para llegar a $100 (solo ~7 ventas).
+**35 production-ready AI prompt systems** covering the whole freelance money path — finding clients, winning them, delivering the work, and running the business.
 
-Contenido incluido en el pack (archivos en esta carpeta):
-1. `01-client-acquisition.md` — prompt de prospección/outreach que genera propuestas personalizadas.
-2. `02-content-engine.md` — sistema de generación de artículos SEO + calendario.
-3. `03-deal-negotiation.md` — prompts para defender tarifa y cierre de ventas.
-4. `04-brand-copy.md` — copywriting para landing pages y email marketing.
-5. `05-social-autopilot.md` — generador de contenido para redes (LinkedIn/X) a partir de 1 idea.
+## What's in this repo
 
-**Ventaja de mercado:** cada prompt viene con instrucción de sistema, ejemplo de entrada/salida real, y parámetro de personalización. Nivel que los packs genéricos no tienen.
+| Folder | Contents | Tier |
+|---|---|---|
+| `01–05` (root) | 5 core systems: client acquisition, content engine, deal negotiation, brand copy, social autopilot | **Base Pack — $14.99** |
+| `bundle/` | 15 more systems (06–20): email sequences, proposals, pricing strategy, onboarding, competitor analysis, product descriptions, video scripts, podcast notes, newsletter growth, SOP docs, job-post filter… | **Pro Bundle — $39** |
+| `es/` | The 5 core systems adapted to LatAm Spanish (WhatsApp, MercadoLibre, local pricing objections) | included in Base Pack |
+| `es/bundle-es/` | 10 Spanish systems (06–15): everything after the first contact — selling, getting paid, retaining, scaling | **Complete EN+ES — $49** |
+| `agency/` | 15 agency-level systems (21–35): client portals, retainers, subcontractor briefs, white-label delivery, SOPs, hiring tests, capacity planning, QC audits, escalation scripts, QBR reports, outbound drips, partnership pitches, RFPs, onboarding automation, pricing tiers | **Agency Edition — $59** |
+| `freemium/` | 3 free starter prompts — try the format before you buy | **Free** |
 
-Estructura de venta: single prompt $4.99 / pack $14.99 / bundle de 20+ prompts $39.
+**Market advantage:** each prompt ships with a **system prompt** that fixes the AI's role, a structured prompt block with `[bracket]` customization slots, and built-in **anti-hallucination `[VERIFY]`/`[CONFIRM]` flags**. Systems you run every week — not a dump of one-line snippets.
+
+Pricing: single prompt **$4.99** · Base Pack **$14.99** · Pro Bundle **$39** · Complete EN+ES **$49** · Agency Edition **$59**.
+
+🛒 Storefront: **https://mxtl7.github.io/prompt-stack/**
+
+License: MIT (see `LICENSE`).

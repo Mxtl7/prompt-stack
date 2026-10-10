@@ -21,7 +21,7 @@
 | 📦 **Base Pack** | 🚀 **Pro Bundle** | 🌎 **Complete EN+ES** |
 |:---|:---|:---|
 | ## $14.99 | ## $39 | ## $49 |
-| **5 core systems** (01–05) + the **Spanish edition** | **All 20 systems** (01–20) — the complete workflow | Everything in the Pro Bundle **plus** the LatAm Spanish edition — **25 systems total** |
+| **5 core systems** (01–05) + the **Spanish edition** | **All 20 systems** (01–20) — the complete workflow | Everything in the Pro Bundle **plus** the full LatAm Spanish edition — **35 systems total** |
 | Find clients, publish content, defend your rate | Find it, win it, deliver it, market it — end to end | Sell in two languages without rewriting a thing |
 | Best for: getting the first wins this week | Best for: freelancers running a real operation | Best for: freelancers serving EN **and** ES markets |
 | [→ Buy the Base Pack](#) | [→ Buy the Pro Bundle](#) | [→ Buy Complete EN+ES](#) | [→ Buy the Agency Edition — $59](#) |
