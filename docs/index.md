@@ -146,6 +146,8 @@ No — it's a market adaptation. Examples use WhatsApp Business, MercadoLibre, I
 **What's the license, and how do I receive the files?**
 MIT license — use, modify, and reuse the prompts in your own work. Files are delivered instantly as `.md` downloads after checkout.
 
+> **15 more honest buyer answers** — "why pay when free prompts exist?", "how do I know ChatGPT didn't write it?", refunds, license and delivery — live on the dedicated FAQ page: **[FAQ → faq.html](faq.html)**.
+
 ---
 
 ## 🚀 Get the stack

@@ -1,6 +1,20 @@
+---
+title: "Anti-Hallucination Prompts: How to Stop ChatGPT Making Things Up"
+description: "How to stop ChatGPT making things up: the three prompt-level patterns that cut hallucinated output — accuracy-bearing system instructions, output specs with uncertainty channels, and explicit bans."
+date: 2026-10-09
+slug: "anti-hallucination-prompts"
+tags: ["anti-hallucination", "chatgpt", "prompt engineering", "verify"]
+---
 # Anti-Hallucination Prompts: How to Stop ChatGPT Making Things Up
 
 *Keyword: how to stop chatgpt making things up · 9 min read*
+
+**Quick answer: an anti-hallucination prompt is a prompt engineered so the model has somewhere
+legitimate to put uncertainty.** It combines an accuracy-bearing system instruction, an output spec
+with a flag for missing facts, and explicit bans on invented statistics, quotes, and prices. Asked
+plainly, ChatGPT makes things up because it predicts plausible text — a fabricated statistic is as
+fluent as a real one — so you patch the prompt, not the model. The three patterns below are built
+into every prompt of the Modern Freelancer's AI Prompt Stack.
 
 ChatGPT makes things up because it's a language model, not a database: it predicts plausible text, and a plausible-looking statistic, price, or quote is exactly as fluent as a real one. You cannot patch the model. You can patch the prompt — and a structured prompt with explicit verification flags cuts hallucinated output far more reliably than asking the model to "please be accurate."
 
@@ -79,6 +93,11 @@ Same pattern: facts come from your inputs. Paste the real file path, the real er
 
 **Where do I get prompts with this built in?**
 The [Modern Freelancer's AI Prompt Stack](https://mxtl7.github.io/prompt-stack/) ships 20 prompt systems with the verification patterns above built into every prompt — `[VERIFY]` flags, accuracy-bearing system instructions, and bracket parameters that keep facts on your side. Plain `.md` files, works in any AI.
+
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Anti-Hallucination Prompts: How to Stop ChatGPT Making Things Up", "description": "How to stop ChatGPT making things up: the three prompt-level patterns that cut hallucinated output — accuracy-bearing system instructions, output specs with uncertainty channels, and explicit bans.", "datePublished": "2026-10-09", "dateModified": "2026-10-11", "inLanguage": "en", "url": "https://mxtl7.github.io/prompt-stack/articles/03-anti-hallucination-prompts.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mxtl7.github.io/prompt-stack/articles/03-anti-hallucination-prompts.html"}, "image": "https://mxtl7.github.io/prompt-stack/og.png", "author": {"@type": "Organization", "name": "The Modern Freelancer's AI Prompt Stack", "url": "https://mxtl7.github.io/prompt-stack/"}, "publisher": {"@type": "Organization", "name": "The Modern Freelancer's AI Prompt Stack", "url": "https://mxtl7.github.io/prompt-stack/"}, "keywords": "anti-hallucination, chatgpt, prompt engineering, verify", "articleSection": "AI prompt systems for freelancers"}, {"@type": "FAQPage", "url": "https://mxtl7.github.io/prompt-stack/articles/03-anti-hallucination-prompts.html#faq", "mainEntity": [{"@type": "Question", "name": "Why not just ask the model to cite sources?", "acceptedAnswer": {"@type": "Answer", "text": "Asking for sources gets you invented ones — fluent citations to papers that don't exist. The `[VERIFY]` flag inverts it: the model marks claims for *your* verification instead of fabricating grounding. You check the real world; the model checks the text."}}, {"@type": "Question", "name": "Does this work in Claude and Gemini too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. These are prompt-level patterns, not model features: a role instruction with accuracy standards, an output spec with uncertainty channels, and explicit bans. They work in any language model."}}, {"@type": "Question", "name": "What about hallucinated code or file paths?", "acceptedAnswer": {"@type": "Answer", "text": "Same pattern: facts come from your inputs. Paste the real file path, the real error message, the real API response into the prompt as parameters, and require the model to work from those instead of inventing plausible ones."}}, {"@type": "Question", "name": "Where do I get prompts with this built in?", "acceptedAnswer": {"@type": "Answer", "text": "The [Modern Freelancer's AI Prompt Stack](https://mxtl7.github.io/prompt-stack/) ships 20 prompt systems with the verification patterns above built into every prompt — `[VERIFY]` flags, accuracy-bearing system instructions, and bracket parameters that keep facts on your side. Plain `.md` files, works in any AI."}}]}]}
+</script>
 
 ---
 

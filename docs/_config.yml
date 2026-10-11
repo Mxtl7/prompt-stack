@@ -1,0 +1,6 @@
+title: The Modern Freelancer's AI Prompt Stack
+description: 20 production-ready AI prompt systems for freelancers — each with a system prompt, structured output spec, bracket parameters, and [VERIFY] anti-hallucination flags. Base Pack $14.99 / Pro Bundle $39 / Complete EN+ES $49 / Agency $59.
+url: https://mxtl7.github.io/prompt-stack
+lang: en
+plugins:
+  - jekyll-seo-tag

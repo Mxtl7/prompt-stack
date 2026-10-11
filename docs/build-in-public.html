@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build in Public — The Modern Freelancer's AI Prompt Stack</title>
+<meta name="description" content="Panel abierto del experimento: días operando, agentes despachados, bounties en curso, ingresos reales ($0) e hitos. Sin métricas inventadas.">
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Modern Freelancer's AI Prompt Stack">
+<meta property="og:title" content="Build in Public — el experimento, sin maquillaje">
+<meta property="og:description" content="Días operando, agentes despachados, bounties en curso, ingresos reales ($0) e hitos. Sin métricas inventadas.">
+<meta property="og:url" content="https://mxtl7.github.io/prompt-stack/build-in-public.html">
+<meta property="og:image" content="https://mxtl7.github.io/prompt-stack/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://mxtl7.github.io/prompt-stack/build-in-public.html">
+
+<!--
+  ============================================================================
+  CÓMO ACTUALIZAR ESTE PANEL  (instrucciones completas también visibles abajo)
+  ============================================================================
+  1. Abre este archivo: docs/build-in-public.html
+  2. Busca el bloque  "const BIP = { ... };"  (justo debajo de <body>).
+  3. Edita SOLO los valores: ingresosUSD, actualizado, agentesDespachados,
+     bountiesEnCurso / bounties[] / hitos[].
+  4. "Días operando" se calcula solo a partir de BIP.inicio (no lo toques).
+  5. Guarda y recarga. Nada más. No hay backend, no hay build, no hay fetch.
+  Regla de honestidad: ingresosUSD = lo COBRADO de verdad, nunca lo esperado.
+  ============================================================================
+-->
+
+<style>
+:root{
+  --bg:#0a0d14; --bg2:#0f1420; --card:#131a29; --card2:#182136;
+  --line:#232d42; --text:#eef2f9; --dim:#98a4b8; --mute:#6b7690;
+  --teal:#5eead4; --violet:#a78bfa; --amber:#fbbf24; --green:#34d399; --rose:#fb7185;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:rgba(94,234,212,.1);color:var(--teal);padding:1px 7px;border-radius:6px;font-size:.86em;border:1px solid rgba(94,234,212,.18)}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.02rem;color:var(--text);display:flex;gap:9px;align-items:center}
+.brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
+.nav .links{display:flex;gap:22px;font-size:.92rem}
+.nav .links a{color:var(--dim)}
+.nav .lang{font-size:.82rem;color:var(--mute);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.nav .lang:hover{text-decoration:none;color:var(--teal);border-color:rgba(94,234,212,.4)}
+@media(max-width:640px){.nav .links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto;height:520px;background:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(94,234,212,.09),transparent 60%),radial-gradient(ellipse 50% 40% at 75% 10%,rgba(167,139,250,.08),transparent 60%);pointer-events:none}
+.hero .kicker{display:inline-block;font-family:ui-monospace,Consolas,monospace;font-size:.8rem;letter-spacing:.14em;color:var(--teal);border:1px solid rgba(94,234,212,.35);padding:7px 16px;border-radius:999px;margin-bottom:22px;background:rgba(94,234,212,.06)}
+.hero h1{font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tagline{color:var(--dim);max-width:660px;margin:20px auto 0;font-size:1.08rem}
+.hero .stamp{display:inline-block;margin-top:20px;font-size:.82rem;color:var(--mute);font-family:ui-monospace,Consolas,monospace}
+
+/* ---------- sections ---------- */
+section{padding:52px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.sub{color:var(--dim);max-width:680px;margin-bottom:30px}
+
+/* ---------- stat grid ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;position:relative;overflow:hidden}
+.stat .lbl{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.stat .val{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.stat .val.sm{font-size:1.9rem}
+.stat .hint{font-size:.82rem;color:var(--mute)}
+.stat.teal .val{color:var(--teal)} .stat.violet .val{color:var(--violet)}
+.stat.amber .val{color:var(--amber)} .stat.green .val{color:var(--green)}
+.stat::after{content:"";position:absolute;inset:auto -30% -60% auto;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(94,234,212,.10),transparent 70%);pointer-events:none}
+
+/* ---------- revenue ---------- */
+.revenue{background:linear-gradient(180deg,rgba(94,234,212,.05),var(--card) 60%);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between}
+.revenue .big{font-size:3.6rem;font-weight:800;letter-spacing:-.03em;color:var(--teal);font-variant-numeric:tabular-nums;line-height:1}
+.revenue .big small{font-size:1.2rem;color:var(--mute);font-weight:600}
+.revenue .txt{max-width:560px;color:var(--dim);font-size:.95rem}
+.revenue .txt b{color:var(--text)}
+
+/* ---------- table ---------- */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:.92rem}
+th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+td{padding:13px 18px;border-bottom:1px solid var(--line);color:var(--dim);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--text)}
+td.num{font-family:ui-monospace,Consolas,monospace;color:var(--teal);white-space:nowrap}
+.pill{display:inline-block;font-size:.74rem;font-weight:700;padding:3px 11px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+.pill.g{color:var(--green);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
+.pill.a{color:var(--amber);border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.08)}
+.pill.t{color:var(--teal);border-color:rgba(94,234,212,.4);background:rgba(94,234,212,.08)}
+.pill.r{color:var(--rose);border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.08)}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;margin-left:8px;padding-left:26px;border-left:2px solid var(--line)}
+.tl{position:relative;padding:0 0 26px}
+.tl::before{content:"";position:absolute;left:-35px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+.tl.pending::before{border-color:var(--mute);border-style:dashed}
+.tl .d{font-family:ui-monospace,Consolas,monospace;font-size:.78rem;color:var(--teal);letter-spacing:.04em}
+.tl.pending .d{color:var(--mute)}
+.tl h3{font-size:1rem;margin:3px 0 4px}
+.tl p{font-size:.9rem;color:var(--dim)}
+
+/* ---------- update instructions ---------- */
+.how{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 22px}
+.how details{border-bottom:1px solid var(--line)}
+.how details:last-child{border-bottom:none}
+.how summary{cursor:pointer;font-weight:700;font-size:.98rem;list-style:none;padding:16px 0;display:flex;justify-content:space-between;gap:12px}
+.how summary::after{content:"+";color:var(--teal);font-size:1.3rem}
+.how details[open] summary::after{content:"–"}
+.how .body{padding:0 0 18px;color:var(--dim);font-size:.92rem}
+.how ol{margin:0 0 0 20px;display:flex;flex-direction:column;gap:8px}
+.how li b{color:var(--text)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:.86rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.note{color:var(--mute);font-size:.82rem;margin-top:16px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>Prompt Stack</div>
+    <nav class="links">
+      <a href="index.html">← Tienda</a>
+      <a href="#numeros">Números</a>
+      <a href="#bounties">Bounties</a>
+      <a href="#hitos">Hitos</a>
+      <a href="#actualizar" style="color:var(--teal);font-weight:700">Cómo actualizar</a>
+    </nav>
+    <a class="lang" href="index.html">EN / ES</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">BUILD IN PUBLIC · SIN MAQUILLAJE</span>
+    <h1>Construyendo un negocio de IA<br>con agentes, <span class="grad">a la vista de todos.</span></h1>
+    <p class="tagline">Sin métricas inventadas. Sin capturas de Stripe con ceros de más. Sólo los números reales del experimento: cuántos días llevo, cuántos agentes he despachado, qué bounties están abiertos, y cuánto he cobrado de verdad.</p>
+    <span class="stamp" id="stamp">—</span>
+    <p class="note" style="max-width:680px;margin:16px auto 0">Reglas del experimento: nada ilegal · nada arriesgado · inversión ≤ 5 % · jamás credenciales · <b style="color:var(--teal)">honestidad radical</b>.</p>
+  </div>
+</div>
+
+<!-- ================= NÚMEROS ================= -->
+<section id="numeros">
+  <div class="wrap">
+    <h2>📊 Los números de hoy</h2>
+    <p class="sub">Todo sale del bloque de datos editable al inicio de la página. Nada se calcula a escondidas.</p>
+    <div class="stats">
+      <div class="stat teal"><div class="lbl">Días operando</div><div class="val" id="s-dias">–</div><div class="hint">desde <span id="s-inicio">–</span></div></div>
+      <div class="stat violet"><div class="lbl">Agentes despachados</div><div class="val" id="s-agentes">–</div><div class="hint">misiones de agente con artefacto escrito</div></div>
+      <div class="stat amber"><div class="lbl">Bounties en curso</div><div class="val" id="s-bounties">–</div><div class="hint">de <span id="s-evaluados">–</span> evaluados</div></div>
+      <div class="stat green"><div class="lbl">Cobrado</div><div class="val" id="s-money">–</div><div class="hint">ingreso real acumulado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INGRESOS ================= -->
+<section id="ingresos">
+  <div class="wrap">
+    <h2>💵 Ingresos</h2>
+    <p class="sub">La parte que casi nadie publica. Se actualiza a mano; si no hay ventas, este número no se mueve.</p>
+    <div class="revenue">
+      <div class="big" id="r-big">–<small> USD</small></div>
+      <div class="txt">
+        <b>Es $0 — y no lo disimulo.</b> La tienda está viva y los 4 checkouts responden, pero todavía no hay compradores. La auditoría de bounties ya está hecha, pero todavía no hay merge pagado. Cuando cobre el primer dólar, este número sube y queda registrado aquí.
+      </div>
+    </div>
+    <p class="note">Regla del panel: <code>ingresosUSD</code> es lo <b>cobrado</b>, nunca lo esperado, lo proyectado ni lo "en caso de ganar".</p>
+  </div>
+</section>
+
+<!-- ================= BOUNTIES ================= -->
+<section id="bounties">
+  <div class="wrap">
+    <h2>🎯 Bounties y competencias en curso</h2>
+    <p class="sub">Sólo información pública (repo, issue, monto de lista y estado). Los montos de pool no son cobros.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Objetivo</th><th>Plataforma</th><th>Monto</th><th>Estado</th><th>Fase</th></tr></thead>
+        <tbody id="b-rows"><!-- render por JS --></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HITOS ================= -->
+<section id="hitos">
+  <div class="wrap">
+    <h2>🚩 Hitos</h2>
+    <p class="sub">La línea de tiempo real del proyecto, desde el día 0.</p>
+    <div class="timeline" id="tl"><!-- render por JS --></div>
+  </div>
+</section>
+
+<!-- ================= ACTUALIZAR ================= -->
+<section id="actualizar">
+  <div class="wrap">
+    <h2>🛠 Cómo actualizar este panel</h2>
+    <p class="sub">Es un archivo HTML estático de una sola pieza: sin backend, sin base de datos, sin build. Se edita a mano.</p>
+    <div class="how">
+      <details open>
+        <summary>1 · Cambiar cualquier número (sobre todo los ingresos)</summary>
+        <div class="body">
+          <ol>
+            <li>Abre <code>docs/build-in-public.html</code> en un editor de texto.</li>
+            <li>Busca el bloque <code>const BIP = { ... };</code> justo debajo de <code>&lt;body&gt;</code>.</li>
+            <li>Edita el valor que quieras. Ejemplo: <code>ingresosUSD: 14.29,</code> cuando caiga la primera venta neta.</li>
+            <li>Actualiza <code>actualizado: "2026-10-12"</code> con la fecha de hoy.</li>
+            <li>Guarda. Recarga la página en el navegador. Listo.</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary>2 · Añadir un bounty a la tabla</summary>
+        <div class="body">
+          <ol>
+            <li>Dentro de <code>BIP.bounties = [ ... ]</code> copia una línea <code>{ ... }</code> existente.</li>
+            <li>Rellena <code>nombre</code>, <code>plataforma</code>, <code>monto</code>, <code>estado</code> y <code>fase</code>.</li>
+            <li>En <code>fase</code> usa una de: <code>en curso</code>, <code>en revisión</code>, <code>listo para enviar</code>, <code>bloqueado</code>, <code>cerrado</code> — define el color del chip.</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary>3 · Añadir un hito al timeline</summary>
+        <div class="body">
+          <ol>
+            <li>En <code>BIP.hitos = [ ... ]</code> añade <code>{ fecha, titulo, texto }</code> al principio de la lista (el más reciente primero, o al final si prefieres orden cronológico).</li>
+            <li>Para un hito futuro/pendiente añade <code>pendiente: true</code> y se dibujará con el punto hueco.</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary>4 · Publicar (sólo cuando lo decidas tú)</summary>
+        <div class="body">
+          <ol>
+            <li>Esta página <b>no se sube sola</b>. El commit/push lo haces tú.</li>
+            <li>Opcional: enlázala desde <code>docs/index.html</code> (un link "Build in public" en el footer) y añádela a <code>docs/sitemap.xml</code> para que los buscadores la descubran.</li>
+            <li>Vive en: <code>https://mxtl7.github.io/prompt-stack/build-in-public.html</code></li>
+          </ol>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><strong>Build in Public</strong> — parte de The Modern Freelancer's AI Prompt Stack.</span>
+    <span><a href="index.html">Tienda</a> · <a href="https://github.com/Mxtl7/prompt-stack">GitHub Repo</a> · MIT License</span>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   DATOS DEL PANEL — EDITA SÓLO ESTE BLOQUE
+   --------------------------------------------------------------------------
+   ingresosUSD        → lo COBRADO de verdad (hoy 0). Nunca lo esperado.
+   actualizado        → fecha de la última edición (YYYY-MM-DD).
+   agentesDespachados → nº de misiones de agente con artefacto escrito.
+   bountiesEvaluados  → nº de bounties/competencias analizados hasta hoy.
+   bounties[]         → tabla de abajo. fase: en curso | en revisión |
+                        listo para enviar | bloqueado | cerrado
+   hitos[]            → timeline. pon  pendiente:true  para un hito futuro.
+   ========================================================================== */
+const BIP = {
+  inicio: "2026-10-09",            // día 0 de la operación — no cambiar
+  actualizado: "2026-10-11",       // fecha de esta edición
+  ingresosUSD: 0,                  // COBRADO real
+  agentesDespachados: 107,         // misiones de agente con artefacto (swarm-logs/)
+  bountiesEvaluados: 18,           // recons de bounty/competencia hechos
+
+  bounties: [
+    { nombre: "workadventure-universe#1", plataforma: "Algora · GitHub", monto: "$150",   estado: "PR #826 abierto · 5/5 tests verdes · esperando al bot", fase: "en revisión" },
+    { nombre: "studenthub#55",            plataforma: "Algora · GitHub", monto: "$600",   estado: "2 PRs abiertos · pausado desde mayo",                    fase: "en revisión" },
+    { nombre: "gyroflow#45",              plataforma: "Algora · GitHub", monto: "$500",   estado: "recon → implementación (mayor valor/hora)",              fase: "en curso" },
+    { nombre: "gmscore#580",              plataforma: "Algora · GitHub", monto: "$400",   estado: "gate: hace falta video en hardware físico real",         fase: "bloqueado" },
+    { nombre: "El Encuentro 2026",        plataforma: "Superteam Earn",  monto: "$2 000 (pool)", estado: "deliverable listo, sin submit · cierra 22–24 oct", fase: "listo para enviar" },
+    { nombre: "Revert v4lend (audit)",    plataforma: "Cantina",         monto: "$50 000 (pool)", estado: "recon completo · la competencia sigue abierta hasta 3-nov", fase: "en curso" }
+  ],
+
+  hitos: [
+    { fecha: "2026-10-11", titulo: "Semana de la construcción", texto: "4 checkouts de la tienda en vivo y verificados; 10 artículos SEO + versiones ES/PT; herramientas gratis (A/B Tester, Client Report); recon de bounties a escala." },
+    { fecha: "2026-10-11", titulo: "Primer PR de bounty abierto", texto: "workadventure-universe#1 (Algora, $150) — PR con 5/5 tests en verde, a la espera del bot." },
+    { fecha: "2026-10-11", titulo: "Entregable de competencia listo", texto: "Superteam 'El Encuentro 2026': hilo para X + payload de envío preparados. Falta sólo publicar y enviar." },
+    { fecha: "2026-10-10", titulo: "35 sistemas publicados", texto: "Se completa la tienda: edición Agency (21–35) + edición completa EN+ES. Catálogo final en GitHub Pages." },
+    { fecha: "2026-10-09", titulo: "Día 0", texto: "Nace el proyecto: repositorio y tienda (GitHub Pages) con los primeros sistemas de prompts." },
+    { fecha: "próximo",    titulo: "Primer submit real y primer dólar", texto: "Enviar el hito de Superteam antes del 22-oct y completar la verificación para poder cobrar el primer ingreso.", pendiente: true }
+  ]
+};
+/* ======================= FIN DEL BLOQUE EDITABLE ======================= */
+
+(function(){
+  function fmtDate(iso){
+    try{ var d=new Date(iso+"T00:00:00"); return d.toLocaleDateString("es",{day:"2-digit",month:"short",year:"numeric"}); }
+    catch(e){ return iso; }
+  }
+  function daysBetween(a,b){
+    // diff por fecha de calendario (evita el redondeo por la hora del día)
+    var a0 = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+    var b0 = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+    return Math.max(0, Math.round((b0 - a0)/86400000));
+  }
+
+  var inicio = new Date(BIP.inicio+"T00:00:00");
+  var hoy = new Date();
+  var dias = daysBetween(inicio, hoy) + 1;            // día 1 = el día de inicio
+
+  var $ = function(id){ return document.getElementById(id); };
+  $("s-dias").textContent = dias;
+  $("s-inicio").textContent = fmtDate(BIP.inicio);
+  $("s-agentes").textContent = BIP.agentesDespachados;
+  $("s-evaluados").textContent = BIP.bountiesEvaluados;
+  $("s-money").textContent = "$" + Number(BIP.ingresosUSD).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+  $("r-big").innerHTML = "$" + Number(BIP.ingresosUSD).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}) + "<small> USD</small>";
+  $("stamp").textContent = "Última actualización: " + fmtDate(BIP.actualizado) + " · día " + dias + " de operación";
+
+  var enCurso = BIP.bounties.filter(function(b){ return b.fase!=="cerrado"; }).length;
+  $("s-bounties").textContent = enCurso;
+
+  // bounties
+  var fasePill = { "en curso":"t", "en revisión":"a", "listo para enviar":"g", "bloqueado":"r", "cerrado":"" };
+  var rows = BIP.bounties.map(function(b){
+    var cls = fasePill[b.fase] || "";
+    return "<tr><td><strong>"+b.nombre+"</strong></td><td>"+b.plataforma+"</td><td class='num'>"+b.monto+"</td><td>"+b.estado+"</td><td><span class='pill "+cls+"'>"+b.fase+"</span></td></tr>";
+  }).join("");
+  $("b-rows").innerHTML = rows;
+
+  // timeline
+  $("tl").innerHTML = BIP.hitos.map(function(h){
+    var pend = h.pendiente ? " pending" : "";
+    var fecha = h.pendiente ? "pendiente" : fmtDate(h.fecha);
+    return "<div class='tl"+pend+"'><div class='d'>"+fecha+"</div><h3>"+h.titulo+"</h3><p>"+h.texto+"</p></div>";
+  }).join("");
+})();
+</script>
+
+</body>
+</html>

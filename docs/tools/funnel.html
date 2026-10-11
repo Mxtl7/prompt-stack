@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funnel map + benchmarks — The Modern Freelancer's AI Prompt Stack</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Internal funnel map: capture → nurture → FIRST10 offer, with sector benchmark ranges.">
+<style>
+:root{--bg:#0a0d14;--bg2:#0f1420;--card:#131a29;--card2:#182136;--line:#232d42;--text:#eef2f9;--dim:#98a4b8;--mute:#6b7690;--teal:#5eead4;--violet:#a78bfa;--amber:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+a{color:var(--teal);text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:ui-monospace,Consolas,Menlo,monospace;background:rgba(94,234,212,.1);color:var(--teal);padding:1px 7px;border-radius:6px;font-size:.86em;border:1px solid rgba(94,234,212,.18)}
+header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:920px;margin:0 auto;padding:0 24px}
+.brand{font-weight:800;font-size:1rem;color:var(--text);display:flex;gap:9px;align-items:center}
+.brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
+.nav a.back{color:var(--dim);font-size:.9rem}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:42px 0 8px}
+.lede{color:var(--dim);max-width:700px;margin-bottom:34px}
+.lede b{color:var(--text)}
+h2{font-size:1.25rem;font-weight:800;letter-spacing:-.01em;margin:40px 0 14px}
+.stage{margin:0 auto}
+.bar{margin:0 auto 10px;border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border:1px solid var(--line)}
+.bar .lbl{font-weight:800}
+.bar .val{font-family:ui-monospace,Consolas,monospace;font-size:.9rem;color:var(--dim)}
+.s1{width:100%;background:linear-gradient(90deg,rgba(94,234,212,.20),rgba(94,234,212,.06));border-color:rgba(94,234,212,.35)}
+.s2{width:46%;background:linear-gradient(90deg,rgba(167,139,250,.22),rgba(167,139,250,.06));border-color:rgba(167,139,250,.35)}
+.s3{width:16%;background:linear-gradient(90deg,rgba(251,191,36,.22),rgba(251,191,36,.06));border-color:rgba(251,191,36,.35);min-width:200px}
+.s4{width:9%;background:linear-gradient(90deg,rgba(255,255,255,.14),rgba(255,255,255,.04));min-width:170px}
+@media(max-width:620px){.s2,.s3,.s4{width:100%;min-width:0}}
+.step{color:var(--mute);font-size:.8rem;text-align:center;margin:4px 0 10px;font-family:ui-monospace,monospace;letter-spacing:.06em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:620px){.two{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.card h3{font-size:.95rem;margin-bottom:6px}
+.card h3 .tag{font-size:.68rem;font-family:ui-monospace,monospace;letter-spacing:.1em;color:var(--teal);border:1px solid rgba(94,234,212,.3);border-radius:999px;padding:2px 8px;margin-left:8px}
+.card.new{border-color:rgba(94,234,212,.45);background:linear-gradient(180deg,rgba(94,234,212,.06),transparent)}
+.card p{color:var(--dim);font-size:.9rem}
+.card .big{font-family:ui-monospace,monospace;color:var(--text);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+td.range{font-family:ui-monospace,monospace;color:var(--text);white-space:nowrap}
+.vf{color:var(--amber);font-size:.72rem;font-family:ui-monospace,monospace;border:1px solid rgba(251,191,36,.35);border-radius:6px;padding:1px 6px;margin-left:6px}
+.seq{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.seq span{font-family:ui-monospace,monospace;font-size:.76rem;background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--dim)}
+.seq span.end{color:var(--amber);border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.07)}
+.note{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 20px;color:var(--mute);font-size:.84rem;margin-top:16px}
+.note b{color:var(--dim)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:.86rem;margin-top:50px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="../index.html"><span class="dot"></span>Prompt Stack</a>
+    <a class="back" href="../free-samples.html">← Free samples</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Funnel map &amp; benchmarks</h1>
+  <p class="lede">One funnel, two capture surfaces, one offer. Every visitor enters at the top; the <b>exit-intent pop</b> gives a second chance to the ones who try to leave, feeding the <b>same 5-email sequence</b> that already ends with <code>FIRST10</code>. This page is internal (noindex) — it's the map, not the storefront.</p>
+
+  <!-- ============ FUNNEL ============ -->
+  <div class="stage">
+    <div class="bar s1"><span class="lbl">Visits</span><span class="val">100% · the whole traffic</span></div>
+    <div class="step">▼ capture rate 2–5%</div>
+    <div class="bar s2"><span class="lbl">Leads (emails)</span><span class="val">2–5% of visits</span></div>
+    <div class="step">▼ lead → sale 1–3% (via the 5-email sequence + FIRST10)</div>
+    <div class="bar s3"><span class="lbl">Buyers</span><span class="val">1–3% of leads</span></div>
+    <div class="step">▼ one-time, $9.99 (FIRST10) → $14.99 base</div>
+    <div class="bar s4"><span class="lbl">Revenue</span><span class="val">≈ $2–$22 per 1,000 visits</span></div>
+  </div>
+
+  <p class="note" style="margin-top:22px"><b>Read the widths:</b> bars are on a visual (not literal) scale — a real 2–5% capture rate would be a sliver. The point of the map is <b>where each lever acts</b>, not the pixel width.</p>
+
+  <!-- ============ CAPTURE SURFACES ============ -->
+  <h2>Two capture surfaces into the same list</h2>
+  <div class="two">
+    <div class="card">
+      <h3>On-page form <span class="tag">EXISTING</span></h3>
+      <p>On <code>free-samples.html</code> (the <span class="big">#weekly</span> section) and linked from the hero + nav. Posts to Formspree, falls back to <code>mailto:</code>. Converts readers who finish the 3 samples.</p>
+    </div>
+    <div class="card new">
+      <h3>Exit-intent pop <span class="tag">NEW</span></h3>
+      <p>Fires when a visitor moves to leave (desktop: cursor to the top edge; touch: scroll-depth/time). Offers the <span class="big">FIRST10</span> code to recover the abandoning visitor. Same endpoint, same sequence, adds a <code>source=exit-intent</code> tag.</p>
+    </div>
+  </div>
+
+  <!-- ============ SEQUENCE ============ -->
+  <h2>Nurture = retargeting on an owned channel ($0)</h2>
+  <p class="lede" style="margin-bottom:8px">Every captured email enters the one sequence. There is no separate "retargeting" tool — the emails <em>are</em> the retargeting. Email is the only re-touch channel (owned, free); paid ad-retargeting via a pixel is explicitly out of scope for v1.</p>
+  <div class="seq">
+    <span>Day 0 · welcome + prompt</span>
+    <span>Day 2 · use case</span>
+    <span>Day 4 · chaining</span>
+    <span>Day 6 · honest proof</span>
+    <span class="end">Day 7 · offer FIRST10</span>
+    <span>then · weekly prompt</span>
+  </div>
+
+  <!-- ============ BENCHMARKS ============ -->
+  <h2>Benchmark ranges used</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Range</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>Visit → lead</td><td class="range">2–5%</td><td>Share of visitors who give an email (on-page form + exit-intent pop combined).<span class="vf">[VERIFY] sector range</span></td></tr>
+      <tr><td>Lead → sale</td><td class="range">1–3%</td><td>Share of captured leads who buy, after the 5-email sequence with the FIRST10 offer.<span class="vf">[VERIFY] sector range</span></td></tr>
+      <tr><td>Visit → sale</td><td class="range">0.02–0.15%</td><td>Derived: (2–5%) × (1–3%). The funnel is multiplicative.</td></tr>
+      <tr><td>Revenue / 1,000 visits</td><td class="range">≈ $2–$22</td><td>0.2–1.5 buyers × $9.99–$14.99. Order-of-magnitude, not a promise.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <b>Worked example (1,000 visits):</b> 1,000 × 2–5% → <b>20–50 leads</b>; 20–50 × 1–3% → <b>≈ 0.2–1.5 buyers</b>; at $9.99–$14.99 → <b>≈ $2–$22</b>. Exit-intent lifts the <em>first</em> number (more of the same traffic is captured), so it compounds through the whole funnel. It does not change lead→sale; only the offer/sequence does.<br><br>
+    <b>[VERIFY] flags</b> are deliberate: the ranges are the working targets the funnel is built around, not measured results for this store. Replace with real numbers once there's traffic in the analytics.
+  </div>
+
+  <footer>
+    <div>The Modern Freelancer's AI Prompt Stack · internal funnel doc · <a href="../index.html">storefront</a> · <a href="../free-samples.html">free samples</a></div>
+  </footer>
+</div>
+
+</body>
+</html>

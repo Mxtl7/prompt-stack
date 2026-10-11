@@ -142,6 +142,10 @@ h3.grp span{color:var(--mute);font-weight:500;font-size:.88rem}
 footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:.86rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </style>
+<!-- Structured data: Product + FAQPage (mirrors the visible FAQ above) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Product", "name": "The Modern Freelancer's AI Prompt Stack", "description": "20 production-ready AI prompt systems covering the full freelance money path — each with a system prompt, structured output spec, bracket parameters, and [VERIFY] anti-hallucination flags. Plain .md files that work in ChatGPT, Claude, Gemini, or any AI.", "url": "https://mxtl7.github.io/prompt-stack/", "image": "https://mxtl7.github.io/prompt-stack/og.png", "brand": {"@type": "Brand", "name": "The Modern Freelancer's AI Prompt Stack"}, "offers": [{"@type": "Offer", "name": "Base Pack", "price": "14.99", "priceCurrency": "USD", "url": "https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-base-pack", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "name": "Pro Bundle", "price": "39.00", "priceCurrency": "USD", "url": "https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "name": "Complete EN+ES Edition", "price": "49.00", "priceCurrency": "USD", "url": "https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "name": "Agency Edition", "price": "59.00", "priceCurrency": "USD", "url": "https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-agency-edition/", "availability": "https://schema.org/InStock"}], "isRelatedTo": [{"@type": "Product", "name": "Complete EN+ES Edition (LatAm Spanish market adaptation)"}, {"@type": "Product", "name": "Agency Edition"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I use the prompts?", "acceptedAnswer": {"@type": "Answer", "text": "Open any .md file, copy the prompt, replace the [brackets] with your details, and paste it into ChatGPT, Claude, Gemini, or any AI tool. Adjust the output until it sounds like you."}}, {"@type": "Question", "name": "Do I need an app or a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. These are plain .md files that work in any AI tool you already use — nothing to install, nothing to keep paying for."}}, {"@type": "Question", "name": "What makes these different from free prompt lists?", "acceptedAnswer": {"@type": "Answer", "text": "Free lists give you 1000 snippets you never use. Each of these is a system: a system instruction that sets the AI's role, a structured output spec, and customization parameters — plus [VERIFY] flags that stop the AI from inventing facts. You get 20 documented systems you'll actually run every week."}}, {"@type": "Question", "name": "Which pack should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the Base Pack ($14.99) if you mainly need clients, content, and pricing conversations. Get the Pro Bundle ($39) if you also deliver projects, run email or a newsletter, or document your operations. Get Complete EN+ES ($49) if you sell in both English and Spanish — it's the whole bundle plus the LatAm edition."}}, {"@type": "Question", "name": "What if I already know how to write good prompts?", "acceptedAnswer": {"@type": "Answer", "text": "Then you'll recognize what these actually are: not prompts, but systems. Each one ships with a system instruction that sets the AI's role and constraints, a structured output spec so results stay consistent, [bracket] slots that make every output reusable across clients, and [VERIFY] flags that catch hallucinated claims before they reach a client. You could rebuild that scaffolding yourself — the pack buys back the hours it takes to do it twenty times, tested on real client work."}}, {"@type": "Question", "name": "What if it isn't for me?", "acceptedAnswer": {"@type": "Answer", "text": "Every edition comes with a 7-day money-back guarantee: email within 7 days of purchase and I refund it in full, no questions asked. You risk one email, not $14.99."}}, {"@type": "Question", "name": "Is the Spanish version just a translation?", "acceptedAnswer": {"@type": "Answer", "text": "No — it's a market adaptation. Examples use WhatsApp Business, MercadoLibre, Instagram and WhatsApp statuses; pricing handles local currencies and the objections you actually hear in the region, in natural professional Spanish."}}, {"@type": "Question", "name": "What's the license, and how do I receive the files?", "acceptedAnswer": {"@type": "Answer", "text": "MIT license — use, modify, and reuse the prompts in your own work. Files are delivered instantly as .md downloads after checkout."}}]}]}
+</script>
 </head>
 <body>
 
@@ -152,7 +156,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <a href="#pricing">Pricing</a>
       <a href="#whats-inside">What's inside</a>
       <a href="#why-different">Why it's different</a>
-      <a href="#faq">FAQ</a>
+      <a href="faq.html">FAQ</a>
       <a href="free-samples.html" style="color:var(--teal);font-weight:700">Free samples</a>
       <a href="#get-it">Get the stack</a>
     </nav>
@@ -345,7 +349,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap">
     <div class="center">
       <h2>❓ FAQ</h2>
-      <p class="sub">Everything you'd ask before buying.</p>
+      <p class="sub">The most common questions. There are <a href="faq.html"><b>15 honest answers</b></a> on the full FAQ — including "why pay when free prompts exist?" — written to be useful, not persuasive.</p>
     </div>
     <div class="faq">
       <details>
@@ -381,6 +385,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <p>MIT license — use, modify, and reuse the prompts in your own work. Files are delivered instantly as <code>.md</code> downloads after checkout.</p>
       </details>
     </div>
+    <p class="center" style="max-width:780px;margin:22px auto 0"><a href="faq.html" style="font-weight:700">See all 15 buyer questions →</a></p>
   </div>
 </section>
 
@@ -402,9 +407,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <footer>
   <div class="wrap">
     <span><strong>The Modern Freelancer's AI Prompt Stack</strong> — built by freelancers, for freelancers.</span>
-    <span><a href="https://github.com/Mxtl7/prompt-stack">GitHub Repo</a> · <a href="https://github.com/Mxtl7/prompt-stack/blob/main/LICENSE">MIT License</a></span>
+    <span><a href="faq.html">FAQ</a> · <a href="free-samples.html">Free samples</a> · <a href="https://github.com/Mxtl7/prompt-stack">GitHub Repo</a> · <a href="https://github.com/Mxtl7/prompt-stack/blob/main/LICENSE">MIT License</a></span>
   </div>
 </footer>
 
+<!-- Exit-intent capture pop (FIRST10) — captures abandoning visitors into the weekly list. -->
+<script src="js/exit-intent.js" defer></script>
 </body>
 </html>
