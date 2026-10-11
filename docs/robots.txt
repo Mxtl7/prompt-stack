@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mxtl7.github.io/prompt-stack/sitemap.xml
