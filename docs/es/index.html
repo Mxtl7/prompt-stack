@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompts de IA para Freelancers — 35 sistemas listos para usar | Prompt Stack</title>
+<meta name="description" content="35 prompts de IA para freelancers en español: conseguir clientes por WhatsApp, artículos SEO, defender tu tarifa y vender en LatAm. Ejemplos de PY, MX y AR. Desde USD 14.99.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El Stack de Prompts de IA para Freelancers">
+<meta property="og:title" content="Prompts de IA para Freelancers — El stack completo en español">
+<meta property="og:description" content="35 sistemas de prompts con instrucción de sistema, esquema de salida y banderas [VERIFICAR]. Adaptados al mercado real de LatAm: WhatsApp Business, MercadoLibre, Instagram.">
+<meta property="og:url" content="https://mxtl7.github.io/prompt-stack/es/">
+<meta property="og:image" content="https://mxtl7.github.io/prompt-stack/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_AR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="es_PY">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prompts de IA para Freelancers — El stack completo en español">
+<meta name="twitter:description" content="35 sistemas de prompts adaptados a LatAm: WhatsApp, precios en tu moneda, objeciones reales. Desde USD 14.99.">
+<meta name="twitter:image" content="https://mxtl7.github.io/prompt-stack/og.png">
+
+<!-- Hreflang: esta página (es) y la versión en inglés -->
+<link rel="alternate" hreflang="es" href="https://mxtl7.github.io/prompt-stack/es/">
+<link rel="alternate" hreflang="en" href="https://mxtl7.github.io/prompt-stack/">
+<link rel="alternate" hreflang="x-default" href="https://mxtl7.github.io/prompt-stack/">
+
+<style>
+:root{
+  --bg:#0a0d14; --bg2:#0f1420; --card:#131a29; --card2:#182136;
+  --line:#232d42; --text:#eef2f9; --dim:#98a4b8; --mute:#6b7690;
+  --teal:#5eead4; --violet:#a78bfa; --amber:#fbbf24;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:rgba(94,234,212,.1);color:var(--teal);padding:1px 7px;border-radius:6px;font-size:.86em;border:1px solid rgba(94,234,212,.18)}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.02rem;color:var(--text);display:flex;gap:9px;align-items:center}
+.brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
+.lang{font-size:.82rem;color:var(--mute);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.lang:hover{text-decoration:none;color:var(--teal);border-color:rgba(94,234,212,.4)}
+.nav .links{display:flex;gap:22px;font-size:.92rem}
+.nav .links a{color:var(--dim)}
+@media(max-width:640px){.nav .links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto;height:520px;background:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(94,234,212,.09),transparent 60%),radial-gradient(ellipse 50% 40% at 75% 10%,rgba(167,139,250,.08),transparent 60%);pointer-events:none}
+.hero .kicker{display:inline-block;font-family:ui-monospace,Consolas,monospace;font-size:.8rem;letter-spacing:.14em;color:var(--teal);border:1px solid rgba(94,234,212,.35);padding:7px 16px;border-radius:999px;margin-bottom:22px;background:rgba(94,234,212,.06)}
+.hero h1{font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tagline{color:var(--dim);max-width:640px;margin:20px auto 0;font-size:1.08rem}
+.hero .flags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.hero .flags span{font-size:.8rem;color:var(--dim);border:1px solid var(--line);background:var(--bg2);padding:6px 13px;border-radius:999px}
+.hero .flags b{color:var(--text);font-weight:600}
+.prices-hero{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;font-family:ui-monospace,Consolas,monospace;font-size:.95rem}
+.prices-hero span{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.prices-hero b{color:var(--teal)}
+
+/* ---------- sections ---------- */
+section{padding:58px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.sub{color:var(--dim);max-width:640px;margin-bottom:34px}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* ---------- pricing cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;position:relative}
+.card.pop{border-color:rgba(167,139,250,.55);background:linear-gradient(180deg,rgba(167,139,250,.08),var(--card) 45%)}
+.card .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:700;letter-spacing:.1em;color:#0a0d14;background:linear-gradient(90deg,var(--teal),var(--violet));padding:4px 14px;border-radius:999px}
+.card h3{font-size:1.02rem;color:var(--dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.85rem}
+.card .price{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;margin:8px 0 2px}
+.card .price small{font-size:.95rem;color:var(--mute);font-weight:500}
+.card .desc{color:var(--dim);font-size:.93rem;margin:10px 0 16px;flex:1}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.card ul li{font-size:.9rem;color:var(--dim);padding-left:24px;position:relative}
+.card ul li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+.card ul li b{color:var(--text);font-weight:600}
+.card .cta{display:block;text-align:center;background:var(--card2);border:1px solid var(--line);color:var(--text);font-weight:700;padding:13px;border-radius:12px;font-size:.95rem}
+.card.pop .cta{background:linear-gradient(90deg,var(--teal),var(--violet));color:#0a0d14;border:none}
+.card .cta:hover{text-decoration:none;filter:brightness(1.12)}
+.card .for{font-size:.8rem;color:var(--mute);text-align:center;margin-top:10px}
+.singles{color:var(--mute);font-size:.85rem;text-align:center;margin-top:22px}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin-bottom:28px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line);color:var(--dim);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num{font-family:ui-monospace,Consolas,monospace;color:var(--teal);white-space:nowrap}
+td strong{color:var(--text)}
+h3.grp{font-size:1.05rem;margin-bottom:14px;color:var(--text)}
+h3.grp span{color:var(--mute);font-weight:500;font-size:.88rem}
+
+/* ---------- differentiators / how it works ---------- */
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.feat .ico{font-size:1.3rem}
+.feat h3{font-size:1rem;margin:8px 0 6px}
+.feat p{font-size:.9rem;color:var(--dim)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.step .n{font-family:ui-monospace,Consolas,monospace;color:var(--teal);font-size:.85rem;font-weight:700}
+.step h3{font-size:1rem;margin:8px 0 6px}
+.step p{font-size:.9rem;color:var(--dim)}
+
+/* ---------- blog cards ---------- */
+.blog{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.post h3{font-size:1.02rem;line-height:1.35}
+.post p{font-size:.88rem;color:var(--dim);flex:1}
+.post .meta{font-size:.78rem;color:var(--mute);font-family:ui-monospace,Consolas,monospace}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:780px;margin:0 auto}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:700;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::after{content:"+";color:var(--teal);font-size:1.3rem;font-weight:400;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--dim);font-size:.93rem;margin-top:12px}
+.faq details[open]{border-color:rgba(94,234,212,.3)}
+
+/* ---------- final CTA ---------- */
+.final{background:linear-gradient(180deg,var(--bg),rgba(94,234,212,.045));border-top:1px solid var(--line);text-align:center;padding:72px 0}
+.final h2{margin-bottom:10px}
+.final p{color:var(--dim);max-width:560px;margin:0 auto 30px}
+.buy-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.buy-row a{padding:14px 26px;border-radius:12px;font-weight:700;font-size:.95rem;border:1px solid var(--line);background:var(--card2);color:var(--text)}
+.buy-row a.primary{background:linear-gradient(90deg,var(--teal),var(--violet));color:#0a0d14;border:none}
+.buy-row a:hover{text-decoration:none;filter:brightness(1.12)}
+.fine{color:var(--mute);font-size:.84rem;margin-top:22px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:.86rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>Prompt Stack</div>
+    <nav class="links">
+      <a href="#precios">Precios</a>
+      <a href="#contenido">Qué incluye</a>
+      <a href="#porque-distinto">Por qué es distinto</a>
+      <a href="#blog">Guías</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#conseguirlo">Conseguir el stack</a>
+    </nav>
+    <a class="lang" href="/" lang="en" hreflang="en" title="English version">EN</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">EL FLUJO COMPLETO DEL FREELANCER · 35 SISTEMAS DE PROMPTS</span>
+    <h1>Dejá de guardar prompts sueltos.<br>Empezá a usar <span class="grad">sistemas.</span></h1>
+    <p class="tagline">Prompts de IA para freelancers que van más allá del copy/paste: conseguir clientes por WhatsApp, publicar contenido que posiciona, defender tu tarifa sin incómodas negociaciones y vender en LatAm. Cada sistema trae instrucción de sistema, esquema de salida estructurado, parámetros entre <code>[corchetes]</code> y banderas anti-alucinación <code>[VERIFICAR]</code>.</p>
+    <div class="flags">
+      <span>Funciona en <b>ChatGPT, Claude, Gemini — cualquier IA</b></span>
+      <span>Archivos <b>.md</b> simples — sin apps ni suscripciones</span>
+      <span><b>Entrega inmediata</b> · licencia MIT</span>
+    </div>
+    <div class="prices-hero">
+      <span>📦 Pack Base — <b>USD 14.99</b></span>
+      <span>🚀 Bundle Pro — <b>USD 39</b></span>
+      <span>🌎 Completo EN+ES — <b>USD 49</b></span>
+      <span>🏛 Edición Agencia — <b>USD 59</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRICING ================= -->
+<section id="precios">
+  <div class="wrap">
+    <div class="center">
+      <h2>💰 Elegí tu stack</h2>
+      <p class="sub">Pago único. Entrega inmediata. Actualizaciones de por vida para la versión 1.x.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Pack Base</h3>
+        <div class="price">USD 14.99</div>
+        <p class="desc">Los 5 sistemas principales <b>en inglés más su edición en español</b> — conseguir clientes, publicar contenido, defender tu tarifa.</p>
+        <ul>
+          <li><b>5 sistemas principales</b>: adquisición de clientes, contenido SEO, negociación, copy de landing y email, autopilot de redes</li>
+          <li><b>Edición en español incluida</b> (adaptada a LatAm)</li>
+          <li>Instrucción de sistema + esquema de salida en cada prompt</li>
+          <li>Banderas anti-alucinación <code>[VERIFICAR]</code></li>
+        </ul>
+        <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-base-pack">Conseguir el Pack Base →</a>
+        <p class="for">Ideal para: tus primeros resultados esta semana</p>
+      </div>
+      <div class="card pop">
+        <span class="badge">EL MÁS COMPLETO</span>
+        <h3>Bundle Pro</h3>
+        <div class="price">USD 39</div>
+        <p class="desc">Los 20 sistemas en inglés — el flujo completo, desde la prospección hasta la documentación.</p>
+        <ul>
+          <li><b>Los 20 sistemas EN</b> (01–20): conseguir trabajo, ganarlo, entregarlo y promocionarlo</li>
+          <li>Propuestas, precios, onboarding, briefs, SOPs, seguimientos</li>
+          <li>Instrucción de sistema + esquema de salida en cada prompt</li>
+          <li>Banderas anti-alucinación <code>[VERIFICAR]</code></li>
+        </ul>
+        <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle">Conseguir el Bundle Pro →</a>
+        <p class="for">Ideal para: freelancers que ya manejan una operación real</p>
+      </div>
+      <div class="card">
+        <h3>Completo EN+ES</h3>
+        <div class="price">USD 49</div>
+        <p class="desc">Todo el Bundle Pro <b>más la edición en español para LatAm</b> — 35 sistemas en total.</p>
+        <ul>
+          <li><b>Los 20 sistemas EN</b> + la edición ES completa (01–15)</li>
+          <li>Ejemplos con WhatsApp Business, MercadoLibre e Instagram</li>
+          <li>Precios en moneda local y objeciones reales de LatAm</li>
+          <li>Vendé en dos idiomas sin reescribir nada</li>
+        </ul>
+        <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/">Conseguir el Completo EN+ES →</a>
+        <p class="for">Ideal para: freelancers que venden en inglés y en español</p>
+      </div>
+      <div class="card">
+        <h3>Edición Agencia</h3>
+        <div class="price">USD 59</div>
+        <p class="desc">15 sistemas de nivel agencia (21–35, en inglés) — para cuando el kit individual se queda corto y empieza el negocio.</p>
+        <ul>
+          <li>Retainers, briefs para subcontratistas, entrega white-label</li>
+          <li>Auditorías de calidad, guiones de escalamiento, reportes QBR</li>
+          <li>Respuestas a RFPs, evaluación de candidatos, arquitectura de precios</li>
+          <li>Automatización de onboarding y planificación de capacidad</li>
+        </ul>
+        <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-agency-edition/">Conseguir la Edición Agencia →</a>
+        <p class="for">Ideal para: freelancers que están armando un negocio</p>
+      </div>
+    </div>
+    <p class="singles">También disponible: cualquier prompt individual por <b>USD 4.99</b>.</p>
+  </div>
+</section>
+
+<!-- ================= WHAT'S INSIDE ================= -->
+<section id="contenido">
+  <div class="wrap">
+    <h2>📦 Qué incluye</h2>
+    <p class="sub">Sistemas documentados: cada uno con instrucción de sistema, ejemplo de entrada y de salida con contexto LatAm, y parámetros entre [corchetes].</p>
+
+    <h3 class="grp">Edición en español — los 15 sistemas ES <span>(incluida con el Completo EN+ES y en el Pack Base)</span></h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>#</th><th>Prompt</th><th>Para qué sirve</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td><strong>Adquisición de Clientes y Primer Contacto</strong></td><td>3 mensajes en frío personalizados — gancho investigado, un resultado concreto, CTA sin presión. Con seguimiento para WhatsApp.</td></tr>
+          <tr><td class="num">02</td><td><strong>Motor de Contenido SEO</strong></td><td>Artículos de 1500 palabras con ángulo local: esquema, E-E-A-T, FAQ y metadatos.</td></tr>
+          <tr><td class="num">03</td><td><strong>Negociación y Cierre</strong></td><td>3 respuestas para defender tu tarifa, diagnóstico de la objeción real y un cierre que pide compromiso (con adelanto 30–50%).</td></tr>
+          <tr><td class="num">04</td><td><strong>Copy para Landing y Email</strong></td><td>Héroe + beneficios + cuerpo + CTA + FAQ de objeciones — cero lenguaje de vendedor. CTA de WhatsApp incluido.</td></tr>
+          <tr><td class="num">05</td><td><strong>Autopilot de Redes</strong></td><td>De 1 idea a 6 piezas: LinkedIn, X, carrusel, Instagram y estado de WhatsApp.</td></tr>
+          <tr><td class="num">06</td><td><strong>Secuencias de Email</strong></td><td>5 emails de bienvenida que venden en piloto automático: asunto, vista previa, cuerpo y un solo CTA por mensaje.</td></tr>
+          <tr><td class="num">07</td><td><strong>Propuestas</strong></td><td>Propuestas de 1 página que cierran sin regateo: resultado con número, precio como inversión, una sola forma de avanzar.</td></tr>
+          <tr><td class="num">08</td><td><strong>Estrategia de Precios</strong></td><td>3 niveles en moneda local (guaraníes, pesos, soles), frases listas para el "está caro" y regla de subida anual.</td></tr>
+          <tr><td class="num">09</td><td><strong>Onboarding de Clientes</strong></td><td>Onboarding de los primeros 7 días que fideliza: máximo 3 pedidos con plazo, quién hace qué y primer resultado visible.</td></tr>
+          <tr><td class="num">10</td><td><strong>Brief de Proyecto</strong></td><td>Alcance con lo que SÍ y NO incluye, entregables con fecha y 3 preguntas antes de empezar — nada de trabajo inútil.</td></tr>
+          <tr><td class="num">11</td><td><strong>Análisis de Competencia</strong></td><td>Evidencia verificable (no supuestos) y 3 oportunidades ordenadas por costo bajo y resultado alto.</td></tr>
+          <tr><td class="num">12</td><td><strong>Descripciones de Producto</strong></td><td>Descripciones que responden la objeción antes del DM, con detalles verificables y variantes cortas para ficha y caption.</td></tr>
+          <tr><td class="num">13</td><td><strong>Guiones de Video</strong></td><td>Guiones verticales de 30–60 segundos con gancho en los primeros 3 segundos y 2 ganchos para testear.</td></tr>
+          <tr><td class="num">14</td><td><strong>Notas de Podcast</strong></td><td>Títulos, descripción, capítulos, citas destacadas y keywords — desde cualquier transcripción.</td></tr>
+          <tr><td class="num">15</td><td><strong>Crecimiento de Newsletter</strong></td><td>Plan de 60 días: un imán específico, 3 lugares de mención, mensaje de reenvío y regla de limpieza trimestral.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="feats">
+      <div class="feat"><div class="ico">💬</div><h3>WhatsApp Business primero</h3><p>Mensajes de venta que suenan a persona, no a flyer. Con seguimientos incluidos — porque ahí se cierra en LatAm.</p></div>
+      <div class="feat"><div class="ico">💱</div><h3>Precios en tu moneda</h3><p>Dólares y moneda local (guaraníes, pesos, soles), con las objeciones de siempre: "está caro", "¿me hacés precio?", "te pago la mitad ahora".</p></div>
+      <div class="feat"><div class="ico">🛍️</div><h3>MercadoLibre, Instagram y estados de WhatsApp</h3><p>Los canales donde de verdad te encuentran los clientes en LatAm — no solo LinkedIn.</p></div>
+      <div class="feat"><div class="ico">🗣️</div><h3>Español profesional natural</h3><p>Tuteo cercano y directo. Ni traducción del inglés, ni voz de gurú de LinkedIn.</p></div>
+    </div>
+
+    <h3 class="grp" style="margin-top:34px;">Bundle Pro EN — 20 sistemas en inglés <span>(USD 39, incluye 01–05)</span></h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>#</th><th>Prompt</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td><strong>Client Acquisition & Outreach</strong></td><td>3 mensajes en frío personalizados — gancho investigado, un resultado concreto, CTA suave.</td></tr>
+          <tr><td class="num">02</td><td><strong>SEO Content Engine</strong></td><td>Artículos de 1500 palabras posicionables: esquema, estructura E-E-A-T, FAQ + metadatos.</td></tr>
+          <tr><td class="num">03</td><td><strong>Negotiation & Closing</strong></td><td>3 defensas de precio, diagnóstico de objeciones, cierre que pide compromiso.</td></tr>
+          <tr><td class="num">04</td><td><strong>Landing Page & Email Copy</strong></td><td>Héroe + bullets de beneficios + cuerpo + CTA + FAQ de objeciones — cero lenguaje marketing.</td></tr>
+          <tr><td class="num">05</td><td><strong>Social Media Autopilot</strong></td><td>1 post de LinkedIn + 3 hilos de X + carrusel de 5 slides desde UNA idea central.</td></tr>
+          <tr><td class="num">06</td><td><strong>Email Marketing Sequences</strong></td><td>Secuencia de bienvenida de 5 emails: asunto, vista previa, cuerpo, un CTA por email.</td></tr>
+          <tr><td class="num">07</td><td><strong>Proposal Writing</strong></td><td>Propuestas de menos de 600 palabras listas para firmar: sus palabras, tu precio, un próximo paso.</td></tr>
+          <tr><td class="num">08</td><td><strong>Pricing Strategy</strong></td><td>Cálculo de tarifa piso, 3 modelos de precios y la frase exacta para decir tu precio.</td></tr>
+          <tr><td class="num">09</td><td><strong>Client Onboarding System</strong></td><td>Email de bienvenida, agenda de kickoff, checklist de assets y respuesta al scope creep.</td></tr>
+          <tr><td class="num">10</td><td><strong>Project Brief Intake</strong></td><td>Brief limpio desde mensajes desordenados del cliente — la ambigüedad se detecta antes de facturar.</td></tr>
+          <tr><td class="num">11</td><td><strong>Competitor Analysis</strong></td><td>Mapa de mercado, brecha de posicionamiento y una declaración de posicionamiento en 2 frases.</td></tr>
+          <tr><td class="num">12</td><td><strong>Product Descriptions</strong></td><td>Variantes Amazon / Shopify / redes — beneficio primero, claims marcados.</td></tr>
+          <tr><td class="num">13</td><td><strong>Video Scripts (YouTube/TikTok)</strong></td><td>Guiones que abren con gancho, con beats, quiebres de patrón, títulos + texto de miniatura.</td></tr>
+          <tr><td class="num">14</td><td><strong>Podcast & Show Notes</strong></td><td>Títulos, descripción, capítulos, citas destacadas, keywords — desde cualquier transcripción.</td></tr>
+          <tr><td class="num">15</td><td><strong>Newsletter Growth</strong></td><td>Posicionamiento, lead magnets, línea de referidos, calendario realista de 4 semanas.</td></tr>
+          <tr><td class="num">16</td><td><strong>Cold Email Follow-Up</strong></td><td>Secuencia de 4 toques que suman valor — nunca "solo para insistir".</td></tr>
+          <tr><td class="num">17</td><td><strong>Testimonial & Review Kit</strong></td><td>Mensajes para pedir testimonios + preguntas guiadas + borrador que el cliente aprueba.</td></tr>
+          <tr><td class="num">18</td><td><strong>SOP & Notion Documentation</strong></td><td>Proceso desordenado → SOP listo para el día uno, con checklist y pasos SI/ENTONCES.</td></tr>
+          <tr><td class="num">19</td><td><strong>Meeting Notes → Action Items</strong></td><td>Resumen, decisiones, tabla de acciones con responsable y fecha, mensaje de seguimiento.</td></tr>
+          <tr><td class="num">20</td><td><strong>Job Post & Gig Filter</strong></td><td>Veredicto APLICAR/SALTAR con banderas rojas, puntaje de afinidad y tu ángulo de propuesta.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POR QUE ES DISTINTO ================= -->
+<section id="porque-distinto">
+  <div class="wrap">
+    <h2>🏆 Por qué este stack es distinto</h2>
+    <p class="sub">La mayoría de los packs de prompts son un volcado de frases sueltas de una línea. Esto es un sistema operativo documentado para tu trabajo freelance.</p>
+    <div class="feats">
+      <div class="feat"><div class="ico">🛡️</div><h3>Anti-alucinación incorporado</h3><p>Cada prompt obliga a la IA a marcar con <code>[VERIFICAR]</code> / <code>[CONFIRMAR]</code> lo que no puede saber — en vez de inventar datos, precios o citas. La diferencia entre una herramienta y un problema.</p></div>
+      <div class="feat"><div class="ico">🧩</div><h3>Instrucciones de sistema reales</h3><p>Cada prompt define el rol de la IA, sus restricciones y un esquema de salida estructurado — resultados consistentes y de nivel profesional, no una jugada con suerte.</p></div>
+      <div class="feat"><div class="ico">🔧</div><h3>Parámetros entre [corchetes]</h3><p><code>[Tu servicio]</code>, <code>[tu nicho]</code>, <code>[tu tarifa]</code>. Adaptás cualquier sistema a tu negocio en menos de un minuto.</p></div>
+      <div class="feat"><div class="ico">🌎</div><h3>Una edición ES que no es traducción</h3><p>Ejemplos y canales adaptados al mercado real: WhatsApp Business, MercadoLibre, Instagram, precios en moneda local.</p></div>
+      <div class="feat"><div class="ico">💼</div><h3>El camino del dinero completo</h3><p>Conseguir trabajo (01, 11, 20), ganarlo (03, 07, 16), entregarlo (09, 10, 18, 19), promocionarlo (02, 04–06, 12–15, 17).</p></div>
+      <div class="feat"><div class="ico">⚡</div><h3>Formato universal</h3><p>Archivos <code>.md</code> simples que funcionan en cualquier IA. Copiar, completar los corchetes, pegar. Licencia MIT.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section id="como-funciona">
+  <div class="wrap">
+    <h2>🛠 Cómo funciona</h2>
+    <p class="sub">Menos de un minuto desde el archivo hasta el resultado.</p>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Elegí el sistema</h3><p>Según tu objetivo: conseguir un cliente, publicar, poner precio, hacer onboarding.</p></div>
+      <div class="step"><span class="n">02</span><h3>Completá los [corchetes]</h3><p>Tu servicio, tu prospecto, tu tarifa. Esa es toda la configuración.</p></div>
+      <div class="step"><span class="n">03</span><h3>Pegalo en tu IA</h3><p>Ajustá hasta que suene a vos. Guardá las mejores salidas: son tus plantillas reutilizables.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog">
+  <div class="wrap">
+    <h2>📚 Guías gratis en español</h2>
+    <p class="sub">Leé estas guías antes de comprar nada — sirven por sí solas.</p>
+    <div class="blog">
+      <a class="post" href="articulos/prompts-de-ia-para-freelancers.md">
+        <span class="meta">LECTURA DE 8 MIN</span>
+        <h3>Prompts de IA para freelancers: el método de sistemas que te hace contratar</h3>
+        <p>Por qué el prompt de una línea no funciona y cómo armar sistemas de prompts que consiguen clientes, aunque estés empezando.</p>
+      </a>
+      <a class="post" href="articulos/vender-servicios-con-ia-en-latinoamerica.md">
+        <span class="meta">LECTURA DE 9 MIN</span>
+        <h3>Cómo vender servicios con IA en Latinoamérica (sin sonar a robot)</h3>
+        <p>WhatsApp, precios en tu moneda, objeciones reales: la guía de venta con IA adaptada a LatAm, no traducida del inglés.</p>
+      </a>
+      <a class="post" href="articulos/prompts-para-conseguir-clientes-en-espanol.md">
+        <span class="meta">LECTURA DE 8 MIN</span>
+        <h3>Prompts para conseguir clientes en español: con plantillas listas para copiar</h3>
+        <p>Plantillas de prospección y seguimiento en español natural, con ejemplos para WhatsApp Business, Instagram y correo.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <h2>❓ Preguntas frecuentes</h2>
+      <p class="sub">Todo lo que te preguntarías antes de comprar.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Cómo uso los prompts?</summary>
+        <p>Abrí cualquier archivo <code>.md</code>, copiá el prompt, reemplazá los <code>[corchetes]</code> con tus datos y pegalo en ChatGPT, Claude, Gemini o cualquier IA. Ajustá la salida hasta que suene a vos.</p>
+      </details>
+      <details>
+        <summary>¿Necesito una app o una suscripción?</summary>
+        <p>No. Son archivos <code>.md</code> simples que funcionan en la IA que ya usás — nada para instalar, nada que seguir pagando.</p>
+      </details>
+      <details>
+        <summary>¿En qué se diferencian de las listas de prompts gratis?</summary>
+        <p>Las listas gratis te dan mil frases que nunca usás. Cada uno de estos es un <em>sistema</em>: una instrucción de sistema que define el rol de la IA, un esquema de salida estructurado y parámetros de personalización — además de banderas <code>[VERIFICAR]</code> que impiden que la IA invente datos. Son sistemas documentados que vas a usar todas las semanas.</p>
+      </details>
+      <details>
+        <summary>¿Qué pack me conviene?</summary>
+        <p>Empezá con el <strong>Pack Base (USD 14.99)</strong> si tu prioridad son clientes, contenido y conversaciones de precio. Tomá el <strong>Bundle Pro (USD 39)</strong> si además entregás proyectos, manejás email o newsletter, o documentás tu operación. El <strong>Completo EN+ES (USD 49)</strong> es el bundle entero más la edición en español — para vender en ambos idiomas.</p>
+      </details>
+      <details>
+        <summary>¿La versión en español es solo una traducción?</summary>
+        <p>No — es una adaptación de mercado. Los ejemplos usan WhatsApp Business, MercadoLibre, Instagram y estados de WhatsApp; los precios se manejan en dólares y moneda local, y las objeciones son las que escuchás de verdad en la región, en español profesional natural.</p>
+      </details>
+      <details>
+        <summary>¿Los 35 sistemas están todos en español?</summary>
+        <p>Honestamente, no: <strong>15 sistemas completos están en español</strong> (01–15) y los 20 restantes (16–20 del bundle y 21–35 de la Edición Agencia) están en inglés. Si trabajás para clientes de habla hispana, la edición ES cubre el camino completo del dinero; si también vendés en inglés, el Completo EN+ES te da los 35.</p>
+      </details>
+      <details>
+        <summary>¿Cuál es la licencia y cómo recibo los archivos?</summary>
+        <p>Licencia MIT — usá, modificá y reutilizá los prompts en tu propio trabajo. Los archivos se entregan al instante como descargas <code>.md</code> después del pago.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="final" id="conseguirlo">
+  <div class="wrap">
+    <h2>🚀 Conseguí el stack</h2>
+    <p>El flujo freelance completo, documentado — desde USD 14.99.</p>
+    <div class="buy-row">
+      <a href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-base-pack">Pack Base — USD 14.99</a>
+      <a class="primary" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle">Bundle Pro — USD 39</a>
+      <a href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/">Completo EN+ES — USD 49</a>
+    </div>
+    <p class="fine">Entrega inmediata · Pago único · Licencia MIT</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><strong>El Stack de Prompts de IA para Freelancers Modernos</strong> — hecho por freelancers, para freelancers.</span>
+    <span><a href="https://github.com/Mxtl7/prompt-stack">Repositorio en GitHub</a> · <a href="https://github.com/Mxtl7/prompt-stack/blob/main/LICENSE">Licencia MIT</a> · <a href="/" lang="en" hreflang="en">Versión en inglés</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

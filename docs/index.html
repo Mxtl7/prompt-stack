@@ -20,6 +20,11 @@
 <meta name="twitter:description" content="20 production-ready AI prompt systems — system prompts, [VERIFY] flags, LatAm Spanish edition. $14.99 pack / $39 bundle / $49 EN+ES.">
 <meta name="twitter:image" content="https://mxtl7.github.io/prompt-stack/og.png">
 
+<!-- Hreflang: esta página (en) y la versión en español -->
+<link rel="alternate" hreflang="en" href="https://mxtl7.github.io/prompt-stack/">
+<link rel="alternate" hreflang="es" href="https://mxtl7.github.io/prompt-stack/es/">
+<link rel="alternate" hreflang="x-default" href="https://mxtl7.github.io/prompt-stack/">
+
 <style>
 :root{
   --bg:#0a0d14; --bg2:#0f1420; --card:#131a29; --card2:#182136;
@@ -41,6 +46,8 @@ header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);positio
 .brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
 .nav .links{display:flex;gap:22px;font-size:.92rem}
 .nav .links a{color:var(--dim)}
+.nav .lang{font-size:.82rem;color:var(--mute);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.nav .lang:hover{text-decoration:none;color:var(--teal);border-color:rgba(94,234,212,.4)}
 @media(max-width:640px){.nav .links{display:none}}
 
 /* ---------- hero ---------- */
@@ -55,7 +62,11 @@ header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);positio
 .hero .flags b{color:var(--text);font-weight:600}
 .prices-hero{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;font-family:ui-monospace,Consolas,monospace;font-size:.95rem}
 .prices-hero span{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.prices-hero a{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--dim);text-decoration:none}
+.prices-hero a:hover{text-decoration:none;filter:brightness(1.12)}
 .prices-hero b{color:var(--teal)}
+.guarantee-hero{margin-top:18px;font-size:.9rem;color:var(--dim)}
+.guarantee-hero b{color:var(--teal)}
 
 /* ---------- sections ---------- */
 section{padding:58px 0;border-top:1px solid var(--line)}
@@ -142,8 +153,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <a href="#whats-inside">What's inside</a>
       <a href="#why-different">Why it's different</a>
       <a href="#faq">FAQ</a>
+      <a href="free-samples.html" style="color:var(--teal);font-weight:700">Free samples</a>
       <a href="#get-it">Get the stack</a>
     </nav>
+    <a class="lang" href="es/" lang="es" hreflang="es" title="Versión en español">ES</a>
   </div>
 </header>
 
@@ -158,12 +171,18 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <span>Plain <b>.md</b> files — no apps, no subscriptions</span>
       <span><b>Instant delivery</b> · MIT license</span>
     </div>
+    <p class="guarantee-hero">🛡️ <b>7-day money-back guarantee</b> — email within 7 days, full refund, no questions asked.</p>
     <div class="prices-hero">
-      <span>📦 Base Pack — <b>$14.99</b></span>
-      <span>🚀 Pro Bundle — <b>$39</b></span>
-      <span>🌎 Complete EN+ES — <b>$49</b></span>
-      <span>🏛 Agency Edition — <b>$59</b></span>
+      <a href="#pricing">📦 Base Pack — <b>$14.99</b></a>
+      <a href="#pricing">🚀 Pro Bundle — <b>$39</b></a>
+      <a href="#pricing">🌎 Complete EN+ES — <b>$49</b></a>
+      <a href="#pricing">🏛 Agency Edition — <b>$59</b></a>
     </div>
+    <div class="buy-row" style="margin-top:30px">
+      <a class="primary" href="free-samples.html">Try 3 complete prompts free →</a>
+      <a href="free-samples.html#weekly">Get one prompt a week</a>
+    </div>
+    <p class="fine" style="margin-top:14px">No email needed to read and use the free samples.</p>
   </div>
 </div>
 
@@ -187,7 +206,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </ul>
         <!-- TODO: checkout link -->
         <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-base-pack">Get the Base Pack →</a>
-        <p class="for">Best for: first wins this week</p>
+        <p class="for">🛡️ 7-day money-back guarantee · Best for: first wins this week</p>
       </div>
       <div class="card pop">
         <span class="badge">MOST COMPLETE</span>
@@ -202,7 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </ul>
         <!-- TODO: checkout link -->
         <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle">Get the Pro Bundle →</a>
-        <p class="for">Best for: freelancers running a real operation</p>
+        <p class="for">🛡️ 7-day money-back guarantee · Best for: freelancers running a real operation</p>
       </div>
       <div class="card">
         <h3>Complete EN+ES</h3>
@@ -216,7 +235,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </ul>
         <!-- TODO: checkout link -->
         <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/">Get Complete EN+ES →</a>
-        <p class="for">Best for: freelancers serving EN and ES markets</p>
+        <p class="for">🛡️ 7-day money-back guarantee · Best for: freelancers serving EN and ES markets</p>
       </div>
       <div class="card">
         <h3>Agency Edition</h3>
@@ -230,7 +249,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </ul>
         <!-- TODO: checkout link -->
         <a class="cta" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-agency-edition/">Get the Agency Edition →</a>
-        <p class="for">Best for: freelancers becoming a business</p>
+        <p class="for">🛡️ 7-day money-back guarantee · Best for: freelancers becoming a business</p>
       </div>
     </div>
     <p class="singles">Also available: any single prompt for <b>$4.99</b>.</p>
@@ -346,6 +365,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <p>Start with the <strong>Base Pack ($14.99)</strong> if you mainly need clients, content, and pricing conversations. Get the <strong>Pro Bundle ($39)</strong> if you also deliver projects, run email or a newsletter, or document your operations. Get <strong>Complete EN+ES ($49)</strong> if you sell in both English and Spanish — it's the whole bundle plus the LatAm edition.</p>
       </details>
       <details>
+        <summary>What if I already know how to write good prompts?</summary>
+        <p>Then you'll recognize what these actually are: not prompts, but <em>systems</em>. Each one ships with a system instruction that sets the AI's role and constraints, a structured output spec so results stay consistent, <code>[bracket]</code> slots that make every output reusable across clients, and <code>[VERIFY]</code> flags that catch hallucinated claims before they reach a client. You could rebuild that scaffolding yourself — the pack buys back the hours it takes to do it twenty times, tested on real client work.</p>
+      </details>
+      <details>
+        <summary>What if it isn't for me?</summary>
+        <p>Every edition comes with a <strong>7-day money-back guarantee</strong>: email within 7 days of purchase and I refund it in full, no questions asked. You risk one email, not $14.99.</p>
+      </details>
+      <details>
         <summary>Is the Spanish version just a translation?</summary>
         <p>No — it's a market adaptation. Examples use WhatsApp Business, MercadoLibre, Instagram and WhatsApp statuses; pricing handles local currencies and the objections you actually hear in the region, in natural professional Spanish.</p>
       </details>
@@ -368,7 +395,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <a class="primary" href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle">Buy the Pro Bundle — $39</a>
       <a href="https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/">Buy Complete EN+ES — $49</a>
     </div>
-    <p class="fine">Instant delivery · One-time payment · MIT license</p>
+    <p class="fine">Instant delivery · One-time payment · MIT license · 🛡️ 7-day money-back guarantee — email within 7 days, full refund</p>
   </div>
 </section>
 

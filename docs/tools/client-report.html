@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Report Generator — free tool from The Modern Freelancer's AI Prompt Stack</title>
+<meta name="description" content="Free static Client Report Generator for freelancers and agencies: fill in the client, the month, deliverables and metrics, get a clean printable report with neutral branding and export it as PDF via your browser's print dialog. No signup, no backend, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Modern Freelancer's AI Prompt Stack">
+<meta property="og:title" content="Client Report Generator — free tool">
+<meta property="og:description" content="Turn a month of client work into a clean, printable report with neutral branding. Print to PDF in one click. 100% static — nothing leaves your browser.">
+<link rel="canonical" href="https://mxtl7.github.io/prompt-stack/tools/client-report.html">
+<style>
+:root{
+  --bg:#0a0d14; --bg2:#0f1420; --card:#131a29; --card2:#182136;
+  --line:#232d42; --text:#eef2f9; --dim:#98a4b8; --mute:#6b7690;
+  --teal:#5eead4; --violet:#a78bfa; --amber:#fbbf24; --red:#f87171;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:rgba(94,234,212,.1);color:var(--teal);padding:1px 7px;border-radius:6px;font-size:.86em;border:1px solid rgba(94,234,212,.18)}
+
+/* store banner (required) */
+.store-banner{display:block;background:linear-gradient(90deg,rgba(94,234,212,.12),rgba(167,139,250,.12));border-bottom:1px solid var(--line);padding:10px 24px;text-align:center;font-size:.92rem;color:var(--dim)}
+.store-banner b{color:var(--text)}
+.store-banner .cta{color:var(--teal);font-weight:700}
+
+header{border-bottom:1px solid var(--line);background:rgba(10,13,20,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.02rem;color:var(--text);display:flex;gap:9px;align-items:center}
+.brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--teal),var(--violet))}
+.nav .links{display:flex;gap:22px;font-size:.92rem}
+.nav .links a{color:var(--dim)}
+@media(max-width:640px){.nav .links{display:none}}
+
+.hero{padding:44px 0 26px;text-align:center}
+.hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--dim);max-width:660px;margin:12px auto 0;font-size:1.02rem}
+.steps{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.86rem;color:var(--dim)}
+.step b{color:var(--teal)}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0}
+.panel h2{font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.panel h2 .n{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--teal),var(--violet));color:#0a0d14;font-size:.8rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.panel .hint{color:var(--mute);font-size:.88rem;margin-bottom:14px}
+
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.grid3,.grid2{grid-template-columns:1fr}}
+label.fld{display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+input[type=text],input[type=date],textarea,select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:.9rem;font-family:inherit}
+input[type=text]:focus,input[type=date]:focus,textarea:focus,select:focus{outline:none;border-color:var(--teal)}
+textarea{resize:vertical;line-height:1.55}
+.field{margin-bottom:14px}
+
+.rows{display:flex;flex-direction:column;gap:9px;margin-bottom:12px}
+.row{display:grid;gap:9px;align-items:center}
+.drow{grid-template-columns:2.2fr 1.1fr 2fr auto}
+.mrow{grid-template-columns:2.2fr 1.2fr 1.3fr auto}
+.row input,.row select{font-size:.87rem}
+@media(max-width:700px){.drow,.mrow{grid-template-columns:1fr 1fr;}
+  .drow .d-notes,.mrow .m-change{grid-column:1 / -1}}
+.rowx{border:1px solid var(--line);background:var(--bg2);color:var(--mute);border-radius:8px;width:34px;height:34px;font-size:1.1rem;line-height:1;cursor:pointer;flex:none}
+.rowx:hover{border-color:var(--red);color:var(--red)}
+
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg2);color:var(--text);border-radius:9px;padding:9px 15px;font-size:.88rem;font-weight:600;cursor:pointer;transition:border-color .15s,transform .05s}
+.btn:hover{border-color:var(--teal)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:linear-gradient(135deg,var(--teal),var(--violet));color:#0a0d14;border:none}
+.btn.ghost{background:transparent}
+.btn.small{padding:5px 11px;font-size:.8rem}
+.spacer{flex:1}
+
+.toolbar{position:sticky;bottom:0;z-index:9;margin-top:4px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(80px);background:var(--card2);border:1px solid var(--teal);color:var(--text);padding:10px 18px;border-radius:10px;font-size:.88rem;opacity:0;transition:all .25s;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.report-section{padding:8px 0 34px}
+.preview-note{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:.85rem;margin:6px 0 14px}
+.preview-note b{color:var(--teal)}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;color:var(--mute);font-size:.85rem;text-align:center}
+footer a{color:var(--dim)}
+.privacy{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--mute);font-size:.82rem;margin-top:16px;text-align:center}
+</style>
+
+<!-- Report styles: isolated + reused verbatim for the exported standalone file -->
+<style id="reportStyles">
+.report{background:#ffffff;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;max-width:820px;margin:0 auto;padding:46px 50px;border-radius:14px;box-shadow:0 12px 48px rgba(0,0,0,.42)}
+.report .r-placeholder{color:#9ca3af;text-align:center;padding:60px 10px;font-size:14px}
+.report .r-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:2px solid #111827;padding-bottom:18px}
+.report .r-prov-name{font-size:19px;font-weight:800;letter-spacing:-.01em;color:#111827}
+.report .r-prov-meta{font-size:12.5px;color:#6b7280;margin-top:3px}
+.report .r-title-block{text-align:right;flex:none}
+.report .r-kicker{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#6b7280}
+.report .r-period{font-size:18px;font-weight:800;color:#111827;margin-top:2px}
+.report .r-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 4px}
+.report .r-meta .cell{border-left:3px solid #e5e7eb;padding-left:11px}
+.report .r-meta .lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af}
+.report .r-meta .val{font-size:14px;font-weight:600;color:#111827;word-break:break-word}
+.report h2{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#111827;margin:28px 0 12px;padding-bottom:6px;border-bottom:1px solid #e5e7eb}
+.report .r-summary{font-size:14px;color:#374151;margin-top:18px;white-space:pre-wrap}
+.report table{width:100%;border-collapse:collapse;font-size:13px}
+.report th{text-align:left;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#9ca3af;padding:6px 8px;border-bottom:1px solid #d1d5db;font-weight:700}
+.report td{padding:9px 8px;border-bottom:1px solid #f1f3f5;vertical-align:top;color:#374151}
+.report td.name{font-weight:600;color:#111827}
+.report td.notes{color:#6b7280;font-size:12.5px}
+.report .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:99px;border:1px solid;white-space:nowrap}
+.report .pill.done{color:#047857;background:#ecfdf5;border-color:#a7f3d0}
+.report .pill.prog{color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe}
+.report .pill.plan{color:#b45309;background:#fffbeb;border-color:#fde68a}
+.report .pill.block{color:#b91c1c;background:#fef2f2;border-color:#fecaca}
+.report .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.report .metric{border:1px solid #e5e7eb;border-radius:10px;padding:13px 15px;background:#fafafa;break-inside:avoid}
+.report .metric .mlbl{font-size:11px;color:#6b7280;font-weight:600}
+.report .metric .mval{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-top:3px;color:#111827;word-break:break-word}
+.report .metric .mchg{font-size:11.5px;font-weight:700;color:#047857;margin-top:3px}
+.report .r-list{margin:0;padding-left:20px;color:#374151}
+.report .r-list li{margin:5px 0}
+.report .r-notes{color:#374151;white-space:pre-wrap}
+.report .r-empty{color:#9ca3af;font-style:italic;font-size:13px}
+.report .r-foot{margin-top:32px;padding-top:14px;border-top:1px solid #e5e7eb;font-size:11.5px;color:#9ca3af;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){
+  .report{padding:30px 24px}
+  .report .r-meta,.report .metrics{grid-template-columns:1fr 1fr}
+  .report .r-head{flex-direction:column}
+  .report .r-title-block{text-align:left}
+}
+@media print{
+  @page{size:A4;margin:16mm}
+  html,body{background:#fff !important}
+  .no-print{display:none !important}
+  .wrap{max-width:none !important;padding:0 !important}
+  .report-section{padding:0 !important}
+  main{padding:0 !important}
+  .report{box-shadow:none;border-radius:0;padding:0;max-width:none;margin:0;font-size:12.5px}
+  .report h2{break-after:avoid}
+  .report table,.report .metrics,.report .metric{break-inside:avoid}
+  .report tr{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<!-- Required banner -->
+<a class="store-banner no-print" href="https://mxtl7.github.io/prompt-stack/" target="_blank" rel="noopener">
+  🧾 <b>Herramienta gratuita del stack de prompts</b> — Client Report Generator · <b>versión completa en tienda</b> · <span class="cta">Ver los 35 sistemas →</span>
+</a>
+
+<header class="no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://mxtl7.github.io/prompt-stack/"><span class="dot"></span>Prompt Stack · Free Tools</a>
+    <nav class="links">
+      <a href="https://mxtl7.github.io/prompt-stack/#packs">Packs</a>
+      <a href="https://mxtl7.github.io/prompt-stack/#faq">FAQ</a>
+      <a href="https://mxtl7.github.io/prompt-stack/tools/ab-tester.html">A/B Tester</a>
+      <a href="https://mxtl7.github.io/prompt-stack/tools/client-report.html">Client Report</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero no-print">
+    <h1>Client <span class="grad">Report Generator</span></h1>
+    <p class="sub">Fill in what you shipped this month, hit generate, and print a clean report with <b>neutral branding</b> — no vendor logos, no watermark. One click to PDF via your browser. Built for freelancers and small agencies who bill by the month.</p>
+    <div class="steps">
+      <span class="step"><b>1</b> Your details + client</span>
+      <span class="step"><b>2</b> Deliverables &amp; metrics</span>
+      <span class="step"><b>3</b> Live preview</span>
+      <span class="step"><b>4</b> Print → Save as PDF</span>
+    </div>
+  </section>
+
+  <section class="panel no-print">
+    <h2><span class="n">1</span> Who it's from &amp; who it's for</h2>
+    <p class="hint">These are the only identity fields in the report. Leave any blank and it's simply omitted from the output.</p>
+    <div class="grid3">
+      <div class="field">
+        <label class="fld" for="providerName">From — your name / studio</label>
+        <input type="text" id="providerName" placeholder="e.g. Ana Ríos · Estudio Ríos">
+      </div>
+      <div class="field">
+        <label class="fld" for="providerContact">Your contact (email / site)</label>
+        <input type="text" id="providerContact" placeholder="e.g. ana@estudiorios.com">
+      </div>
+      <div class="field">
+        <label class="fld" for="reportTitle">Report title</label>
+        <input type="text" id="reportTitle" placeholder="Client Report" value="Client Report">
+      </div>
+    </div>
+    <div class="grid3">
+      <div class="field">
+        <label class="fld" for="clientName">Client</label>
+        <input type="text" id="clientName" placeholder="e.g. Acme Café">
+      </div>
+      <div class="field">
+        <label class="fld" for="projectName">Project / engagement</label>
+        <input type="text" id="projectName" placeholder="e.g. Social media retainer">
+      </div>
+      <div class="field">
+        <label class="fld" for="period">Period</label>
+        <input type="text" id="period" placeholder="e.g. October 2026">
+      </div>
+    </div>
+    <div class="grid3">
+      <div class="field">
+        <label class="fld" for="preparedDate">Prepared on</label>
+        <input type="date" id="preparedDate">
+      </div>
+      <div class="field" style="grid-column:2 / -1">
+        <label class="fld" for="summary">Summary (2–3 sentences)</label>
+        <textarea id="summary" rows="2" placeholder="e.g. This month we focused on growing reach on Instagram and shipped the new landing page copy. Engagement up, one deliverable carries into November."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel no-print">
+    <h2><span class="n">2</span> Deliverables</h2>
+    <p class="hint">One row per thing you shipped or worked on. Status drives the colored label in the report.</p>
+    <div class="rows" id="deliverableRows"></div>
+    <button class="btn small ghost" type="button" id="addDeliverable">＋ Add deliverable</button>
+  </section>
+
+  <section class="panel no-print">
+    <h2><span class="n">3</span> Metrics</h2>
+    <p class="hint">The numbers that prove the work — growth, reach, saves, revenue, hours saved. "Change" is free text (e.g. <code>+18% MoM</code>).</p>
+    <div class="rows" id="metricRows"></div>
+    <button class="btn small ghost" type="button" id="addMetric">＋ Add metric</button>
+  </section>
+
+  <section class="panel no-print">
+    <h2><span class="n">4</span> Next steps &amp; notes</h2>
+    <p class="hint">One next step per line — they become the report's bullet list.</p>
+    <div class="grid2">
+      <div class="field">
+        <label class="fld" for="nextSteps">Next steps (one per line)</label>
+        <textarea id="nextSteps" rows="5" placeholder="Ship November content calendar&#10;A/B test the new hero copy&#10;Review ad spend after week 2"></textarea>
+      </div>
+      <div class="field">
+        <label class="fld" for="notes">Notes / blockers (optional)</label>
+        <textarea id="notes" rows="5" placeholder="Anything the client should know — dependencies, decisions pending, budget notes."></textarea>
+      </div>
+    </div>
+    <div class="btnrow">
+      <button class="btn small" type="button" id="loadSample">⚡ Load sample</button>
+      <button class="btn small" type="button" id="resetAll">Reset everything</button>
+    </div>
+  </section>
+
+  <div class="toolbar no-print panel" style="padding:14px 18px">
+    <div class="btnrow" style="margin-top:0">
+      <button class="btn primary" type="button" id="printBtn">🖨 Print / Save as PDF</button>
+      <button class="btn" type="button" id="dlBtn">⬇ Download standalone HTML</button>
+      <button class="btn" type="button" id="genBtn">↻ Refresh preview</button>
+      <span class="spacer"></span>
+      <span style="color:var(--mute);font-size:.8rem">A4 · neutral branding · no watermark</span>
+    </div>
+  </div>
+
+  <section class="report-section">
+    <div class="preview-note no-print">📄 <span><b>Live preview</b> — this is exactly what prints. On paper it drops the dark frame and fills an A4 page.</span></div>
+    <div class="report" id="report">
+      <div class="r-placeholder">Fill in the form above — the report builds itself as you type.</div>
+    </div>
+  </section>
+
+  <div class="privacy no-print">
+    <b>How private is this?</b> 100% static page — no backend, no API keys, no accounts, no analytics, no cookies. Your client data never leaves your browser except when <i>you</i> print or save the file. Draft data is kept in your browser's local storage only; "Reset everything" clears it.
+  </div>
+</main>
+
+<footer class="no-print">
+  <div class="wrap">
+    <p><a href="https://mxtl7.github.io/prompt-stack/"><b>The Modern Freelancer's AI Prompt Stack</b></a> — 35 production-ready prompt systems · Base $14.99 · Bundle $39 · EN+ES $49 · Agency $59</p>
+    <p>Free tool · MIT-licensed repo · <a href="https://mxtl7.github.io/prompt-stack/tools/client-report.html">Client Report Generator</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var LS_KEY = "clientreport-v1";
+
+  /* ---------- helpers ---------- */
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function val(id){ return ($(id).value || "").trim(); }
+  function toast(msg){
+    var t = $("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+  }
+  function statusClass(s){
+    var k = (s || "").toLowerCase();
+    if (k.indexOf("done") > -1 || k.indexOf("deliver") > -1 || k.indexOf("complete") > -1) return "done";
+    if (k.indexOf("progress") > -1 || k.indexOf("ongoing") > -1) return "prog";
+    if (k.indexOf("plan") > -1 || k.indexOf("queue") > -1 || k.indexOf("next") > -1) return "planned";
+    if (k.indexOf("block") > -1 || k.indexOf("delay") > -1 || k.indexOf("wait") > -1) return "block";
+    return "prog";
+  }
+  function pillClass(s){
+    var c = statusClass(s);
+    return c === "planned" ? "plan" : c;
+  }
+  function todayISO(){
+    var d = new Date();
+    function p(n){ return (n < 10 ? "0" : "") + n; }
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  /* ---------- dynamic rows ---------- */
+  function makeDeliverableRow(d){
+    d = d || {};
+    var row = document.createElement("div");
+    row.className = "row drow";
+    row.innerHTML =
+      '<input type="text" class="d-name" placeholder="Delivered item (e.g. 12 social posts)">' +
+      '<select class="d-status">' +
+        '<option>Done</option><option>In progress</option><option>Planned</option><option>Blocked</option>' +
+      '</select>' +
+      '<input type="text" class="d-notes" placeholder="Note (optional)">' +
+      '<button class="rowx" type="button" title="Remove">×</button>';
+    if (d.name) row.querySelector(".d-name").value = d.name;
+    if (d.status) row.querySelector(".d-status").value = d.status;
+    if (d.notes) row.querySelector(".d-notes").value = d.notes;
+    wireRow(row);
+    $("deliverableRows").appendChild(row);
+  }
+  function makeMetricRow(m){
+    m = m || {};
+    var row = document.createElement("div");
+    row.className = "row mrow";
+    row.innerHTML =
+      '<input type="text" class="m-label" placeholder="Metric (e.g. Instagram followers)">' +
+      '<input type="text" class="m-value" placeholder="Value (e.g. 4,820)">' +
+      '<input type="text" class="m-change" placeholder="Change (e.g. +18% MoM)">' +
+      '<button class="rowx" type="button" title="Remove">×</button>';
+    if (m.label) row.querySelector(".m-label").value = m.label;
+    if (m.value) row.querySelector(".m-value").value = m.value;
+    if (m.change) row.querySelector(".m-change").value = m.change;
+    wireRow(row);
+    $("metricRows").appendChild(row);
+  }
+  function wireRow(row){
+    row.querySelector(".rowx").addEventListener("click", function(){
+      row.parentNode.removeChild(row);
+      generate(); save();
+      toast("Row removed");
+    });
+    Array.prototype.forEach.call(row.querySelectorAll("input,select"), function(el){
+      el.addEventListener("input", onChange);
+      el.addEventListener("change", onChange);
+    });
+  }
+  function collect(containerId, fields, keyMap){
+    var out = [];
+    Array.prototype.forEach.call($(containerId).querySelectorAll(".row"), function(row){
+      var obj = {};
+      var ok = false;
+      fields.forEach(function(f){
+        var el = row.querySelector("." + f);
+        var v = el ? (el.value || "").trim() : "";
+        obj[keyMap[f] || f] = v;
+        if (v) ok = true;
+      });
+      if (ok) out.push(obj);
+    });
+    return out;
+  }
+
+  /* ---------- build the report ---------- */
+  function buildReportHtml(){
+    var provider = val("providerName");
+    var contact  = val("providerContact");
+    var client   = val("clientName");
+    var project  = val("projectName");
+    var period   = val("period");
+    var title    = val("reportTitle") || "Client Report";
+    var prepared = val("preparedDate") || todayISO();
+    var summary  = val("summary");
+    var notes    = val("notes");
+    var nextSteps = val("nextSteps").split(/\r?\n/).map(function(s){ return s.trim(); }).filter(Boolean);
+
+    var deliverables = collect("deliverableRows", ["d-name","d-status","d-notes"], {"d-name":"name","d-status":"status","d-notes":"notes"});
+    var metrics      = collect("metricRows", ["m-label","m-value","m-change"], {"m-label":"label","m-value":"value","m-change":"change"});
+
+    var h = '<div class="r-head">' +
+      '<div class="r-prov">' +
+        '<div class="r-prov-name">' + (provider ? esc(provider) : "&nbsp;") + '</div>' +
+        (contact ? '<div class="r-prov-meta">' + esc(contact) + '</div>' : '') +
+      '</div>' +
+      '<div class="r-title-block">' +
+        '<div class="r-kicker">' + esc(title) + '</div>' +
+        '<div class="r-period">' + (period ? esc(period) : "&nbsp;") + '</div>' +
+      '</div>' +
+    '</div>';
+
+    var meta = [];
+    meta.push(['Client', client]);
+    meta.push(['Project', project]);
+    meta.push(['Prepared', prepared]);
+    h += '<div class="r-meta">';
+    meta.forEach(function(pair){
+      h += '<div class="cell"><span class="lbl">' + esc(pair[0]) + '</span><span class="val">' + (pair[1] ? esc(pair[1]) : "—") + '</span></div>';
+    });
+    h += '</div>';
+
+    if (summary){
+      h += '<div class="r-summary">' + esc(summary) + '</div>';
+    }
+
+    h += '<h2>Deliverables</h2>';
+    if (deliverables.length){
+      h += '<table><thead><tr><th style="width:44%">Deliverable</th><th style="width:20%">Status</th><th>Notes</th></tr></thead><tbody>';
+      deliverables.forEach(function(d){
+        h += '<tr><td class="name">' + esc(d.name) + '</td>' +
+             '<td><span class="pill ' + pillClass(d.status) + '">' + esc(d.status || "—") + '</span></td>' +
+             '<td class="notes">' + (d.notes ? esc(d.notes) : "—") + '</td></tr>';
+      });
+      h += '</tbody></table>';
+    } else {
+      h += '<div class="r-empty">No deliverables listed.</div>';
+    }
+
+    h += '<h2>Results</h2>';
+    if (metrics.length){
+      h += '<div class="metrics">';
+      metrics.forEach(function(m){
+        h += '<div class="metric">' +
+             '<div class="mlbl">' + esc(m.label) + '</div>' +
+             '<div class="mval">' + esc(m.value || "—") + '</div>' +
+             (m.change ? '<div class="mchg">' + esc(m.change) + '</div>' : '') +
+             '</div>';
+      });
+      h += '</div>';
+    } else {
+      h += '<div class="r-empty">No metrics listed.</div>';
+    }
+
+    h += '<h2>Next steps</h2>';
+    if (nextSteps.length){
+      h += '<ul class="r-list">';
+      nextSteps.forEach(function(s){ h += '<li>' + esc(s) + '</li>'; });
+      h += '</ul>';
+    } else {
+      h += '<div class="r-empty">No next steps listed.</div>';
+    }
+
+    if (notes){
+      h += '<h2>Notes</h2><div class="r-notes">' + esc(notes) + '</div>';
+    }
+
+    h += '<div class="r-foot">' +
+      '<span>' + (provider ? 'Prepared by ' + esc(provider) : 'Prepared with a free static tool') + '</span>' +
+      '<span>' + esc(prepared) + '</span>' +
+    '</div>';
+
+    return h;
+  }
+
+  function generate(){
+    $("report").innerHTML = buildReportHtml();
+  }
+
+  /* ---------- print / export ---------- */
+  function printReport(){
+    generate();
+    setTimeout(function(){ window.print(); }, 60);
+  }
+  function downloadHtml(){
+    generate();
+    var css = $("reportStyles").textContent;
+    var client = val("clientName") || "Client";
+    var period = val("period");
+    var docName = (client + (period ? " — " + period : "") + " — Client Report");
+    var doc = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+      '<title>' + esc(docName) + '</title><style>' + css +
+      'body.export{background:#fff;margin:0;padding:28px}' +
+      '.export .report{box-shadow:none;border-radius:0;max-width:820px;margin:0 auto}' +
+      '</style></head><body class="export"><div class="report">' +
+      $("report").innerHTML + '</div></body></html>';
+    var blob = new Blob([doc], {type:"text/html;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var safe = docName.replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
+    a.href = url; a.download = (safe || "client-report") + ".html";
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+    toast("Standalone HTML downloaded ✓");
+  }
+
+  /* ---------- persistence ---------- */
+  function save(){
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify({
+        p: val("providerName"), c: val("providerContact"), cl: val("clientName"),
+        pr: val("projectName"), pe: val("period"), t: val("reportTitle"),
+        d: val("preparedDate"), s: val("summary"), n: val("notes"), ns: val("nextSteps"),
+        del: collect("deliverableRows", ["d-name","d-status","d-notes"], {"d-name":"name","d-status":"status","d-notes":"notes"}),
+        met: collect("metricRows", ["m-label","m-value","m-change"], {"m-label":"label","m-value":"value","m-change":"change"})
+      }));
+    } catch(e){ /* storage may be unavailable (private mode) — non-fatal */ }
+  }
+  function set(id, v){ if (v != null && v !== "") $(id).value = v; }
+  function load(){
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      if (!raw) return false;
+      var d = JSON.parse(raw);
+      set("providerName", d.p); set("providerContact", d.c); set("clientName", d.cl);
+      set("projectName", d.pr); set("period", d.pe); set("reportTitle", d.t);
+      set("preparedDate", d.d); set("summary", d.s); set("notes", d.n); set("nextSteps", d.ns);
+      (d.del || []).forEach(makeDeliverableRow);
+      (d.met || []).forEach(makeMetricRow);
+      return true;
+    } catch(e){ return false; }
+  }
+
+  /* ---------- events ---------- */
+  var debounceT;
+  function onChange(){
+    clearTimeout(debounceT);
+    debounceT = setTimeout(function(){ generate(); save(); }, 200);
+  }
+
+  /* ---------- sample ---------- */
+  var SAMPLE = {
+    p:"Ana Ríos · Estudio Ríos", c:"ana@estudiorios.com", cl:"Acme Café",
+    pr:"Social media retainer · Instagram + TikTok", pe:"October 2026",
+    t:"Client Report", d: todayISO(),
+    s:"This month we grew reach on Instagram and shipped the new menu photography. Engagement is up, one deliverable (the summer reel) carries into November.",
+    ns:"Ship the November content calendar by the 3rd\nA/B test the new hero copy on the website\nReview TikTok ad spend after week 2",
+    n:"Waiting on final logo files from your designer before we update the profile assets. Budget for paid boosting is untouched so far.",
+    del:[
+      {name:"12 Instagram posts (grid + stories)", status:"Done", notes:"4 reels, 8 static"},
+      {name:"Menu photo shoot — 40 edited photos", status:"Done", notes:"Delivered in Drive folder"},
+      {name:"TikTok launch: first 3 videos", status:"In progress", notes:"2 filmed, 1 to edit"},
+      {name:"Summer reel (60s)", status:"Planned", notes:"Slipping to Nov"}
+    ],
+    met:[
+      {label:"Instagram followers", value:"4,820", change:"+18% MoM"},
+      {label:"Avg. reach per post", value:"2,140", change:"+31% vs Sep"},
+      {label:"Story saves", value:"612", change:"+44%"},
+      {label:"Profile → link clicks", value:"389", change:"+12%"},
+      {label:"TikTok views (3 videos)", value:"27,400", change:"new channel"},
+      {label:"Hours saved by automation", value:"9.5", change:"vs Sep manual"}
+    ]
+  };
+  function loadSample(){
+    $("deliverableRows").innerHTML = "";
+    $("metricRows").innerHTML = "";
+    set("providerName", SAMPLE.p); set("providerContact", SAMPLE.c); set("clientName", SAMPLE.cl);
+    set("projectName", SAMPLE.pr); set("period", SAMPLE.pe); set("reportTitle", SAMPLE.t);
+    set("preparedDate", SAMPLE.d); set("summary", SAMPLE.s); set("notes", SAMPLE.n); set("nextSteps", SAMPLE.ns);
+    SAMPLE.del.forEach(makeDeliverableRow);
+    SAMPLE.met.forEach(makeMetricRow);
+    generate(); save();
+    toast("Sample report loaded ✓");
+  }
+  function seedEmpty(){
+    $("deliverableRows").innerHTML = "";
+    $("metricRows").innerHTML = "";
+    makeDeliverableRow({}); makeDeliverableRow({}); makeDeliverableRow({});
+    makeMetricRow({}); makeMetricRow({}); makeMetricRow({});
+  }
+  function resetAll(){
+    ["providerName","providerContact","clientName","projectName","period","summary","notes","nextSteps"].forEach(function(id){ $(id).value = ""; });
+    $("reportTitle").value = "Client Report";
+    $("preparedDate").value = todayISO();
+    seedEmpty();
+    try { localStorage.removeItem(LS_KEY); } catch(e){}
+    generate();
+    toast("Reset ✓");
+  }
+
+  /* ---------- wire up ---------- */
+  ["providerName","providerContact","clientName","projectName","period","reportTitle","preparedDate","summary","notes","nextSteps"].forEach(function(id){
+    $(id).addEventListener("input", onChange);
+    $(id).addEventListener("change", onChange);
+  });
+  $("addDeliverable").addEventListener("click", function(){ makeDeliverableRow({}); generate(); save(); });
+  $("addMetric").addEventListener("click", function(){ makeMetricRow({}); generate(); save(); });
+  $("loadSample").addEventListener("click", loadSample);
+  $("resetAll").addEventListener("click", resetAll);
+  $("genBtn").addEventListener("click", function(){ generate(); toast("Preview refreshed ✓"); });
+  $("printBtn").addEventListener("click", printReport);
+  $("dlBtn").addEventListener("click", downloadHtml);
+
+  /* ---------- boot ---------- */
+  $("preparedDate").value = todayISO();
+  if (!load()) seedEmpty();
+  if (!$("preparedDate").value) $("preparedDate").value = todayISO();
+  generate();
+})();
+</script>
+</body>
+</html>
