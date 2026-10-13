@@ -16,7 +16,7 @@
 
 ## 💰 Pricing
 
-<!-- TODO: checkout link -->
+
 
 | 📦 **Base Pack** | 🚀 **Pro Bundle** | 🌎 **Complete EN+ES** |
 |:---|:---|:---|
@@ -24,7 +24,7 @@
 | **5 core systems** (01–05) + the **Spanish edition** | **All 20 systems** (01–20) — the complete workflow | Everything in the Pro Bundle **plus** the full LatAm Spanish edition — **35 systems total** |
 | Find clients, publish content, defend your rate | Find it, win it, deliver it, market it — end to end | Sell in two languages without rewriting a thing |
 | Best for: getting the first wins this week | Best for: freelancers running a real operation | Best for: freelancers serving EN **and** ES markets |
-| [→ Buy the Base Pack](#) | [→ Buy the Pro Bundle](#) | [→ Buy Complete EN+ES](#) | [→ Buy the Agency Edition — $59](#) |
+| [→ Buy the Base Pack](#) | [→ Buy the Pro Bundle](#) | [→ Buy Complete EN+ES](#) | [→ Buy the Agency Edition — $59](https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-agency-edition/) |
 
 💡 *Also available: any single prompt for $4.99. All prices one-time — instant delivery, lifetime updates to v1.x.*
 
@@ -152,11 +152,11 @@ MIT license — use, modify, and reuse the prompts in your own work. Files are d
 
 ## 🚀 Get the stack
 
-<!-- TODO: checkout link -->
+
 
 **The complete freelance workflow, documented — starting at $14.99.**
 
-| [→ Buy the Base Pack — $14.99](#) | [→ Buy the Pro Bundle — $39](#) | [→ Buy Complete EN+ES — $49](#) |
+| [→ Buy the Base Pack — $14.99](https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-base-pack) | [→ Buy the Pro Bundle — $39](https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-pro-bundle) | [→ Buy Complete EN+ES — $49](https://whop.com/mxtl7-e50d/the-modern-freelancer-s-ai-prompt-stack-complete-en-es/) |
 |---|---|---|
 
 *Instant delivery · One-time payment · MIT license*
